@@ -6,7 +6,7 @@ Lake Rotokare
 
 * `Trip advisor review
   <https://www.tripadvisor.com/Attraction_Review-g15657309-d4235368-Reviews-or10-Lake_Rotokare-Rawhitiroa_Taranaki_Region_North_Island.html#REVIEWS>`__
-* `Walkways and lake map <http://www.rotokare.org.nz/Visit/Walkways/`__
+* `Walkways and lake map <http://www.rotokare.org.nz/Visit/Walkways/>`__
 
 Has Kiwi, open 24 hours, about an `hour from home
 <https://www.google.com/maps/dir/New+Plymouth,+New+Zealand/Lake+Rotokare,+Taranaki+4398,+New+Zealand/@-39.2561966,173.9704896,10z/data=!4m14!4m13!1m5!1m1!1s0x6d14f9e62364ce0d:0x500ef6143a2e9a0!2m2!1d174.0630466!2d-39.0611596!1m5!1m1!1s0x6d150dc6a1258f4f:0x2a00ef6165dffd30!2m2!1d174.4103725!2d-39.4516026!3e0>`__
@@ -28,13 +28,14 @@ Terns
 
 TPE info (13th)
 
+==========  ======
 Event        Time
-----------  ------
+==========  ======
 Moonrise      0448
 Sunrise       0552
 Moonset       1859
 Sunset        2044
-
+==========  ======
 
 Using Stellarium, we see that it gets dark around 10, and the 
 milky way lies about 10 degrees above the horizon (horizontally)
@@ -57,12 +58,15 @@ Mountain has FOV of about 11 degrees. 100 mm star trails.
 
 For the 14th
 
+
+==========  ======
 Event         Time
-----------  -------
+==========  ======
 Moonrise       0509
 Sunrise        0551
 Moonset        2014
 Sunset         2045
+==========  ======
 
 
 Example images
@@ -77,9 +81,6 @@ Longitude and Latitude of Terns
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 39.2352° S, 174.0374° E
-
-
-
 
 
 Resources:
