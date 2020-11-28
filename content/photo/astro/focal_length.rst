@@ -4,7 +4,8 @@ Focal length and night photography
 Resources:
 ----------
 
-* [Estiamtes of exposure time using ioptron](https://www.cloudynights.com/topic/671440-ioptron-skyguider-pro-exposure-time/)
+* [Estimates of exposure time using ioptron](https://www.cloudynights.com/topic/671440-ioptron-skyguider-pro-exposure-time/)
+* [More detailed "how to approximate" polar tracking exposure times](https://clarkvision.com/articles/night-photography-in-the-field-setup/)
 * [NPF rule for sharp stars](https://galleries.aaronpriestphoto.com/Articles/NPF-Rule-for-Sharp-Stars) (article, no-tracking)
 * [PhotoPills](https://www.photopills.com/blog/update-photopills-now-and-avoid-trails-your-milky-way-photos) App, for calculating NPF rule in the field
 * [How to photograph the milky way](https://photographylife.com/landscapes/how-to-photograph-the-milky-way)
