@@ -27,6 +27,7 @@ Resources:
     * Fortrose (shipwreck, pukeko statue, wetland wildlife)
     * KaKa point (town with easy access to Nugget point)
 * Stewart Island guides:
+  
   * `How to get there <https://nzpocketguide.com/stewart-island-backpacker-guide/>`__ 
 * Church of the Good Shepard / see mount cook area
 * West coast (clear night sky, milk way etc)
@@ -34,6 +35,9 @@ Resources:
   * Go to Nelson Market, if we have time
 * Sutherland Falls
 
+
+Notes
+-----
 
 Contact Shona's daughter, stay with her in Christchurch.
 Out near the animal park.
@@ -44,7 +48,7 @@ Couple of days in Chch
 
 
 Elm Wildlife Tours
-------------------
+~~~~~~~~~~~~~~~~~~
 
 Information here is a little bit scattered. Basically they will take you to see Albatross, Seals, and Yellow-eyed penguins along the 
 Otago peninsula.
@@ -56,7 +60,7 @@ They do offer a Catlins tour, but that is for parties of 6 or more. From Tourism
 The reviews are generally pretty positive, although the Catlins waterfalls look amazing.
 
 Catlins
--------
+~~~~~~~
 
 I have been to Nugget Point before, and to the Catlins. Last time I was not able to stay in the Catlins to see the yellow-eyed penguins
 come back to the beach, and that is highly reviewed (e.g. `here <https://www.tripadvisor.com/ShowUserReviews-g7382821-d3600126-r159803132-Curio_Bay_Natural_Heritage_Centre-Curio_Bay_Southland_Region_South_Island.html>`__  which makes it sound easy, and `here <http://blog.forestandbird.org.nz/hoiho-spotting-at-curio-bay/?gclid=Cj0KCQiAwf39BRCCARIsALXWETyySShRPWolHKFLxefQIdOGy7PeT4C5G47qVCg0A8u7syI74KJaDt0aAmqDEALw_wcB>`__  makes it seem more like a challenge>`__ 

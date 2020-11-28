@@ -22,3 +22,7 @@ help:
 github:
 	@make html
 	@cp -a build/html/. ./docs
+
+serve:
+	@make github
+	python -m http.server -d docs 8445

@@ -8,10 +8,25 @@ Welcome to RandomResources's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Trip planning:
+   :glob:
 
-   content/trips/new_zealand/south_island
-   content/trips/new_zelaand/taranaki
+   content/trips/new_zealand/*
+
+.. toctree::
+   :maxdepth: 2
+   :caption: VIM
+   :glob:
+
+   content/vim/*
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Photography
+   :glob:
+
+   content/photo/astro/*
+
 
 Indices and tables
 ==================
