@@ -13,7 +13,8 @@ Resources:
   
   * This `list of waterfalls <https://nzpocketguide.com/12-wonderful-waterfalls-new-zealand/>`__ makes Purakaunui Falls and McLean Falls look
     worth visiting.
-  * This `list of 10 things to do in the Catlins <https://nzpocketguide.com/10-must-dos-in-the-catlins/>`__  have the following POI to me:
+  * This `list of 10 things to do in the Catlins <https://nzpocketguide.com/10-must-dos-in-the-catlins/>`__  have the following POI to me
+
     * Nugget Point
     * Cathedral Caves
     * Curio Bay (mostly for the penguins!)
@@ -22,6 +23,7 @@ Resources:
   
   * A slightly `longer list of 18 attractions <https://nzpocketguide.com/18-attractions-you-cant-miss-in-the-catlins/>`__  includes the
     additinal items
+    
     * Fortrose (shipwreck, pukeko statue, wetland wildlife)
     * KaKa point (town with easy access to Nugget point)
 * Stewart Island guides:
