@@ -67,6 +67,11 @@ come back to the beach, and that is highly reviewed (e.g. `here <https://www.tri
 
 
 Itinerary
-=========
+---------
 
+Looking at around 14-21 days.
 
+Should see Shona's daughter in Chch, and Judy in Queenstown.
+
+`Google sheet
+<https://docs.google.com/spreadsheets/d/1fua8OPfZLXCiNRFkVtrzVgDZCzwdZhikpEdSQSdXDQE/edit#gid=0>`__, where we are prepping.

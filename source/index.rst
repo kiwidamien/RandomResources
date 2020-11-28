@@ -6,12 +6,6 @@
 Welcome to RandomResources's documentation!
 ===========================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Trip planning:
-   :glob:
-
-   content/trips/new_zealand/*
 
 .. toctree::
    :maxdepth: 2
