@@ -1,0 +1,202 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using tmux and vim together &#8212; RandomResources  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="using-tmux-and-vim-together">
+<h1>Using tmux and vim together<a class="headerlink" href="#using-tmux-and-vim-together" title="Permalink to this headline">¶</a></h1>
+<p>Reference: [Using tmux sessions, windows, panes, and Vim Buffers together](<a class="reference external" href="https://www.youtube.com/watch?v=hbs7tuwpgZA">https://www.youtube.com/watch?v=hbs7tuwpgZA</a>)</p>
+<div class="section" id="points-of-confusion">
+<h2>Points of confusion<a class="headerlink" href="#points-of-confusion" title="Permalink to this headline">¶</a></h2>
+<p>Vim windows are views on a buffer, vim tabs contain windows. The same buffer might be viewed in different tabs, but
+each window (view) is contained in exactly one tab. i.e. tabs are similar to tabs in firefox.</p>
+<p>In tmux, the language is different:</p>
+<ul class="simple">
+<li>sessions are akin to different “instances” of running vim (tmux allows you to switch between sessions)</li>
+<li>windows in tmux are like tabs in chrome or vim</li>
+<li>panes in tmux break a “window” into different sections (i.e. they are like windows in vim)</li>
+</ul>
+</div>
+<div class="section" id="workspace-recommendations">
+<h2>Workspace recommendations<a class="headerlink" href="#workspace-recommendations" title="Permalink to this headline">¶</a></h2>
+<p>Suppose you have three projects:</p>
+<ol class="arabic simple">
+<li>React project 1</li>
+<li>React project 2</li>
+<li>Flask backend project</li>
+</ol>
+<p>We would have three tmux sessions, one for each project.</p>
+<p>Looking at a react project, we typically need to do the following tasks</p>
+<ul class="simple">
+<li>Edit code</li>
+<li>Run a server (which doesn’t log much useful output), e.g. <cite>npm run start</cite></li>
+<li>Manage versioning (git add, commit, push)</li>
+<li>Deploy to prod or staging</li>
+<li>Maybe a connection to a database for debugging / verifying queries</li>
+</ul>
+<p>We can probably break these up into 4 separate “types”.</p>
+<ul class="simple">
+<li>Editing</li>
+<li>Serving / logging</li>
+<li>Version control and deploying</li>
+</ul>
+<p>We put version contol and deploying together, because if we are deploying we are pretty much always
+doing version control stuff as well.
+We keep editing away from version control because we only interact with VC once we have decided the
+code is in a good place (i.e. VC interaction occurs in “gaps” in the editing process).</p>
+<p>We would have three TMUX windows (tabs to everyone else) in this session.</p>
+<div class="section" id="editing-window">
+<h3>Editing “window”<a class="headerlink" href="#editing-window" title="Permalink to this headline">¶</a></h3>
+<p>This would probably be a single pane, running a single vim session.
+More on this below.</p>
+</div>
+<div class="section" id="serving-logging-window">
+<h3>Serving / logging “window”<a class="headerlink" href="#serving-logging-window" title="Permalink to this headline">¶</a></h3>
+<p>The npm server doesn’t do much, but can display useful error messages.
+It might be useful to split this window into two panes, one for the npm output (if there are errors)
+and the other to the database connection (to quickly see if empty database errors are really errors)</p>
+</div>
+<div class="section" id="version-control-and-deploying-window">
+<h3>Version control and deploying window<a class="headerlink" href="#version-control-and-deploying-window" title="Permalink to this headline">¶</a></h3>
+<p>Presumably we run our testing module before pushing. So maybe a testing pane, a git pane, and a deploy pane.</p>
+</div>
+</div>
+<div class="section" id="editing-window-recommendations">
+<h2>Editing window recommendations<a class="headerlink" href="#editing-window-recommendations" title="Permalink to this headline">¶</a></h2>
+<p>Within vim, create several tabs for files (technically windows) that you would want to look at together.</p>
+<p>For example,</p>
+<ol class="arabic simple">
+<li>you might be looking at a yaml file, and a file that injests that yaml file (one vim tab, two vim windows/panes)</li>
+<li>you might be editing at a component <cite>showFiles.js</cite> that has props from two parents sent in, so you want all three in one tab in separate windows (one vim tab, three vim windows/panes)</li>
+<li>You might have <cite>complexMetaData.yaml</cite> that is really long, and you want to look at multiple places at once.
+You  could have multple windows/panes in different parts of this file.</li>
+</ol>
+</div>
+<div class="section" id="overall-project">
+<h2>Overall project<a class="headerlink" href="#overall-project" title="Permalink to this headline">¶</a></h2>
+<p>So we might have</p>
+<ul>
+<li><p class="first">TMUX SESSION 1: React-project 1
+* TMUX window 1: name <cite>code</cite>, runs vim</p>
+<blockquote>
+<div><ul class="simple">
+<li>vim tab: two window panes (yaml and code)</li>
+<li>vim tab: three window panes (three related components)</li>
+<li>vim tab: one yaml file in multiple panes</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>TMUX window 2: name <cite>version</cite>, runs terminal
+* tmux pane: to run tests, look at output
+* tmux pane: to do version control
+* tmux pane: to deploy</li>
+<li>TMUX window 3: name <cite>serve</cite>
+* tmux pane: the server launched from <cite>npm run start</cite>
+* tmux pane: a possible database connection to help with debugging</li>
+</ul>
+</li>
+<li><p class="first">TMUX SESSION 2: React-project 2</p>
+</li>
+</ul>
+<p>(similar layout)</p>
+<ul>
+<li><p class="first">TMUX SESSION 3: Flask project
+* TMUX window 1: name <cite>code</cite>, runs vim
+* TMUX window 2: name <cite>version</cite>, runs terminal</p>
+<blockquote>
+<div><ul class="simple">
+<li>pytest pane</li>
+<li>git pane</li>
+<li>deploy pane</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>TMUX window 3: name <cite>serve</cite>
+* gunvcorn server
+* databsae connections
+* ipython debugging session</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Damien Martin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../_sources/content/vim/vim_and_window_management.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
