@@ -15,6 +15,13 @@ Welcome to RandomResources's documentation!
 
 .. toctree::
    :maxdepth: 2
+   :caption: Trips
+
+   content/trips/nz2020
+
+
+.. toctree::
+   :maxdepth: 2
    :caption: VIM
    :glob:
 
