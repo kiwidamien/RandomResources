@@ -10,7 +10,8 @@ Welcome to RandomResources's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   content/trips/new_zealand/south_island
+   content/trips/new_zelaand/taranaki
 
 Indices and tables
 ==================

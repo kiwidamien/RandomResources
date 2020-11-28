@@ -1,44 +1,187 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Using tmux and vim together &#8212; RandomResources  documentation</title>
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-   
-  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
 
   </head>
-  <body>
-  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">RandomResources  documentation</h1>
+  
+</a>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/vim/vim_and_window_management.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#points-of-confusion">
+   Points of confusion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#workspace-recommendations">
+   Workspace recommendations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#editing-window">
+     Editing “window”
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#serving-logging-window">
+     Serving / logging “window”
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#version-control-and-deploying-window">
+     Version control and deploying window
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#editing-window-recommendations">
+   Editing window recommendations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overall-project">
+   Overall project
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
   <div class="section" id="using-tmux-and-vim-together">
 <h1>Using tmux and vim together<a class="headerlink" href="#using-tmux-and-vim-together" title="Permalink to this headline">¶</a></h1>
 <p>Reference: [Using tmux sessions, windows, panes, and Vim Buffers together](<a class="reference external" href="https://www.youtube.com/watch?v=hbs7tuwpgZA">https://www.youtube.com/watch?v=hbs7tuwpgZA</a>)</p>
@@ -48,33 +191,33 @@
 each window (view) is contained in exactly one tab. i.e. tabs are similar to tabs in firefox.</p>
 <p>In tmux, the language is different:</p>
 <ul class="simple">
-<li>sessions are akin to different “instances” of running vim (tmux allows you to switch between sessions)</li>
-<li>windows in tmux are like tabs in chrome or vim</li>
-<li>panes in tmux break a “window” into different sections (i.e. they are like windows in vim)</li>
+<li><p>sessions are akin to different “instances” of running vim (tmux allows you to switch between sessions)</p></li>
+<li><p>windows in tmux are like tabs in chrome or vim</p></li>
+<li><p>panes in tmux break a “window” into different sections (i.e. they are like windows in vim)</p></li>
 </ul>
 </div>
 <div class="section" id="workspace-recommendations">
 <h2>Workspace recommendations<a class="headerlink" href="#workspace-recommendations" title="Permalink to this headline">¶</a></h2>
 <p>Suppose you have three projects:</p>
 <ol class="arabic simple">
-<li>React project 1</li>
-<li>React project 2</li>
-<li>Flask backend project</li>
+<li><p>React project 1</p></li>
+<li><p>React project 2</p></li>
+<li><p>Flask backend project</p></li>
 </ol>
 <p>We would have three tmux sessions, one for each project.</p>
 <p>Looking at a react project, we typically need to do the following tasks</p>
 <ul class="simple">
-<li>Edit code</li>
-<li>Run a server (which doesn’t log much useful output), e.g. <cite>npm run start</cite></li>
-<li>Manage versioning (git add, commit, push)</li>
-<li>Deploy to prod or staging</li>
-<li>Maybe a connection to a database for debugging / verifying queries</li>
+<li><p>Edit code</p></li>
+<li><p>Run a server (which doesn’t log much useful output), e.g. <cite>npm run start</cite></p></li>
+<li><p>Manage versioning (git add, commit, push)</p></li>
+<li><p>Deploy to prod or staging</p></li>
+<li><p>Maybe a connection to a database for debugging / verifying queries</p></li>
 </ul>
 <p>We can probably break these up into 4 separate “types”.</p>
 <ul class="simple">
-<li>Editing</li>
-<li>Serving / logging</li>
-<li>Version control and deploying</li>
+<li><p>Editing</p></li>
+<li><p>Serving / logging</p></li>
+<li><p>Version control and deploying</p></li>
 </ul>
 <p>We put version contol and deploying together, because if we are deploying we are pretty much always
 doing version control stuff as well.
@@ -102,55 +245,54 @@ and the other to the database connection (to quickly see if empty database error
 <p>Within vim, create several tabs for files (technically windows) that you would want to look at together.</p>
 <p>For example,</p>
 <ol class="arabic simple">
-<li>you might be looking at a yaml file, and a file that injests that yaml file (one vim tab, two vim windows/panes)</li>
-<li>you might be editing at a component <cite>showFiles.js</cite> that has props from two parents sent in, so you want all three in one tab in separate windows (one vim tab, three vim windows/panes)</li>
-<li>You might have <cite>complexMetaData.yaml</cite> that is really long, and you want to look at multiple places at once.
-You  could have multple windows/panes in different parts of this file.</li>
+<li><p>you might be looking at a yaml file, and a file that injests that yaml file (one vim tab, two vim windows/panes)</p></li>
+<li><p>you might be editing at a component <cite>showFiles.js</cite> that has props from two parents sent in, so you want all three in one tab in separate windows (one vim tab, three vim windows/panes)</p></li>
+<li><p>You might have <cite>complexMetaData.yaml</cite> that is really long, and you want to look at multiple places at once.
+You  could have multple windows/panes in different parts of this file.</p></li>
 </ol>
 </div>
 <div class="section" id="overall-project">
 <h2>Overall project<a class="headerlink" href="#overall-project" title="Permalink to this headline">¶</a></h2>
 <p>So we might have</p>
 <ul>
-<li><p class="first">TMUX SESSION 1: React-project 1
+<li><p>TMUX SESSION 1: React-project 1
 * TMUX window 1: name <cite>code</cite>, runs vim</p>
 <blockquote>
 <div><ul class="simple">
-<li>vim tab: two window panes (yaml and code)</li>
-<li>vim tab: three window panes (three related components)</li>
-<li>vim tab: one yaml file in multiple panes</li>
+<li><p>vim tab: two window panes (yaml and code)</p></li>
+<li><p>vim tab: three window panes (three related components)</p></li>
+<li><p>vim tab: one yaml file in multiple panes</p></li>
 </ul>
 </div></blockquote>
 <ul class="simple">
-<li>TMUX window 2: name <cite>version</cite>, runs terminal
+<li><p>TMUX window 2: name <cite>version</cite>, runs terminal
 * tmux pane: to run tests, look at output
 * tmux pane: to do version control
-* tmux pane: to deploy</li>
-<li>TMUX window 3: name <cite>serve</cite>
+* tmux pane: to deploy</p></li>
+<li><p>TMUX window 3: name <cite>serve</cite>
 * tmux pane: the server launched from <cite>npm run start</cite>
-* tmux pane: a possible database connection to help with debugging</li>
+* tmux pane: a possible database connection to help with debugging</p></li>
 </ul>
 </li>
-<li><p class="first">TMUX SESSION 2: React-project 2</p>
-</li>
+<li><p>TMUX SESSION 2: React-project 2</p></li>
 </ul>
 <p>(similar layout)</p>
 <ul>
-<li><p class="first">TMUX SESSION 3: Flask project
+<li><p>TMUX SESSION 3: Flask project
 * TMUX window 1: name <cite>code</cite>, runs vim
 * TMUX window 2: name <cite>version</cite>, runs terminal</p>
 <blockquote>
 <div><ul class="simple">
-<li>pytest pane</li>
-<li>git pane</li>
-<li>deploy pane</li>
+<li><p>pytest pane</p></li>
+<li><p>git pane</p></li>
+<li><p>deploy pane</p></li>
 </ul>
 </div></blockquote>
 <ul class="simple">
-<li>TMUX window 3: name <cite>serve</cite>
+<li><p>TMUX window 3: name <cite>serve</cite>
 * gunvcorn server
 * databsae connections
-* ipython debugging session</li>
+* ipython debugging session</p></li>
 </ul>
 </li>
 </ul>
@@ -158,44 +300,35 @@ You  could have multple windows/panes in different parts of this file.</li>
 </div>
 
 
-          </div>
+              </div>
+              
         </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../../index.html">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2020, Damien Martin.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
-      |
-      <a href="../../_sources/content/vim/vim_and_window_management.rst.txt"
-          rel="nofollow">Page source</a>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Damien Martin<br/>
+        
+            &copy; Copyright 2020, Damien Martin.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
     </div>
 
     
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
 
     
   </body>
