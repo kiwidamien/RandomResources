@@ -38,7 +38,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Using tmux and vim together" href="../../vim/vim_and_window_management.html" />
+    <link rel="next" title="Wanganui" href="wanganui.html" />
     <link rel="prev" title="South Island Trip (2021)" href="south_island.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -61,16 +61,12 @@
       <ul id="navbar-main-elements" class="navbar-nav mr-auto">
         
         
-        <li class="nav-item ">
-            <a class="nav-link" href="south_island.html">South Island Trip (2021)</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href=""></a>
-        </li>
-        
         <li class="nav-item active">
-            <a class="nav-link" href="">Taranaki region (2020-2021)</a>
+            <a class="nav-link" href="../nz2020.html">New Zealand (2020-2021)</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../vim/tmux_shortcuts.html">tmux shortcuts</a>
         </li>
         
         <li class="nav-item ">
@@ -120,8 +116,8 @@
   <p class="topless"><a href="south_island.html"
                         title="previous chapter">South Island Trip (2021)</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../../vim/vim_and_window_management.html"
-                        title="next chapter">Using tmux and vim together</a></p>
+  <p class="topless"><a href="wanganui.html"
+                        title="next chapter">Wanganui</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
@@ -160,7 +156,13 @@
         </li>
     
         <li class="nav-item toc-entry toc-h4">
-            <a href="#longitude-and-latitude-of-terns" class="nav-link">Longitude and Latitude of Terns</a>
+            <a href="#longitude-and-latitude-of-terns" class="nav-link">Longitude and Latitude of Terns</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h5">
+            <a href="#limit-of-close-points" class="nav-link">Limit of close points</a>
+        </li>
+    
+            </ul>
         </li>
     
             </ul>
@@ -280,6 +282,31 @@ the extra 5 degrees would be 25% of the peak to edge distance.</p>
 <div class="section" id="longitude-and-latitude-of-terns">
 <h4>Longitude and Latitude of Terns<a class="headerlink" href="#longitude-and-latitude-of-terns" title="Permalink to this headline">¶</a></h4>
 <p>39.2352° S, 174.0374° E</p>
+<p>Tarn location: -39.23140724316514, 174.04817853760065</p>
+<p>Peak location: -39.055626, 174.075226</p>
+<p>From google maps, the peak is 8 degrees east of south.</p>
+<p>Getting the bearing we have, in general</p>
+<div class="math notranslate nohighlight">
+\[\beta = \arctan(X/Y), \quad\quad X = \cos\theta_b\,\sin\Delta L, \quad\quad Y = \cos\theta_a \sin\theta_b - \sin\theta_a \cos\theta_b \cos\Delta L\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta\)</span> is the bearing between the two points.</p>
+<div class="section" id="limit-of-close-points">
+<h5>Limit of close points<a class="headerlink" href="#limit-of-close-points" title="Permalink to this headline">¶</a></h5>
+<p>If two points are close, we can assume $Delta L$ is small. If they are far from the poles, we also have small <span class="math notranslate nohighlight">\(\Delta \theta\)</span>. In radians</p>
+<div class="math notranslate nohighlight">
+\[X \approx \Delta L\,\, \cos\theta_b\]</div>
+<p>The expression for Y is trickier</p>
+<div class="math notranslate nohighlight">
+\[Y \approx \sin\theta_b\cos\theta_a - \sin(\theta_a)\cos_\theta_b(1 - \Delta L^2/2) = \sin(\theta_b - \theta_a) + \sin(\theta_a) \cos(\theta_b)(\Delta L)^2/2
+X/Y \approx \frac{\cos\theta_b}{\sin(\theta_b-\theta_a) + \sin(\theta_a) \cos(\theta_b) (\Delta L)^2/2} \Delta L= \frac{2\cos\theta_b}{2\frac{\Delta \theta}{\Delta L} + \sin\theta_a\cos\theta_b\,\Delta L}\]</div>
+<p>Near
+In the limit of small <span class="math notranslate nohighlight">\(\Delta L\)</span>, we have <span class="math notranslate nohighlight">\(X \approx \cos\theta_b \,\Delta L\)</span> and <span class="math notranslate nohighlight">\(Y\approx \cos\theta_a \sing\theta_b - \sin\theta_a\cos\theta_b = sin(\theta_b - \theta_a)\)</span>.  Therefore</p>
+<div class="math notranslate nohighlight">
+\[\beta \approx \arctan(\Delta L \cos\theta_b/\sin(\theta_b - \theta_a))\]</div>
+<div class="math notranslate nohighlight">
+\[X = cos(174.04817853760065^\circ) sin(0.17578^\circ) = (-0.9946)(0.00306797) = -0.00305143
+Y \approx sin(\theta_b - \theta_a) = \sin(-0.027048^\circ) = -0.00047207
+\beta = \arctan(6.4638)\]</div>
+</div>
 </div>
 </div>
 </div>
@@ -298,7 +325,7 @@ the extra 5 degrees would be 25% of the peak to edge distance.</p>
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="south_island.html" title="previous page">South Island Trip (2021)</a>
-    <a class='right-next' id="next-link" href="../../vim/vim_and_window_management.html" title="next page">Using tmux and vim together</a>
+    <a class='right-next' id="next-link" href="wanganui.html" title="next page">Wanganui</a>
 
               </div>
               

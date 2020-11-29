@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Zealand (2020-2021) &#8212; RandomResources  documentation</title>
+    <title>tmux shortcuts &#8212; RandomResources  documentation</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -38,8 +38,8 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="South Island Trip (2021)" href="new_zealand/south_island.html" />
-    <link rel="prev" title="Welcome to RandomResources’s documentation!" href="../../index.html" />
+    <link rel="next" title="Using tmux and vim together" href="vim_and_window_management.html" />
+    <link rel="prev" title="Wanganui" href="../trips/new_zealand/wanganui.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -61,24 +61,24 @@
       <ul id="navbar-main-elements" class="navbar-nav mr-auto">
         
         
+        <li class="nav-item ">
+            <a class="nav-link" href="../trips/nz2020.html">New Zealand (2020-2021)</a>
+        </li>
+        
         <li class="nav-item active">
-            <a class="nav-link" href="">New Zealand (2020-2021)</a>
+            <a class="nav-link" href="">tmux shortcuts</a>
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="../vim/tmux_shortcuts.html">tmux shortcuts</a>
+            <a class="nav-link" href="vim_and_window_management.html">Using tmux and vim together</a>
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="../vim/vim_and_window_management.html">Using tmux and vim together</a>
+            <a class="nav-link" href="vim_as_ide.html">Vim as IDE</a>
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="../vim/vim_as_ide.html">Vim as IDE</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../vim/vimrc.html">Vimrc settings</a>
+            <a class="nav-link" href="vimrc.html">Vimrc settings</a>
         </li>
         
         <li class="nav-item ">
@@ -113,11 +113,11 @@
           
           <div class="col-12 col-md-3 bd-sidebar">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../../index.html"
-                        title="previous chapter">Welcome to RandomResources’s documentation!</a></p>
+  <p class="topless"><a href="../trips/new_zealand/wanganui.html"
+                        title="previous chapter">Wanganui</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="new_zealand/south_island.html"
-                        title="next chapter">South Island Trip (2021)</a></p>
+  <p class="topless"><a href="vim_and_window_management.html"
+                        title="next chapter">Using tmux and vim together</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
@@ -134,9 +134,16 @@
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
               
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#scroll-mode" class="nav-link">Scroll mode</a>
+        </li>
     
     </ul>
 </nav>
@@ -151,24 +158,14 @@
               
               <div>
                 
-  <div class="section" id="new-zealand-2020-2021">
-<h1>New Zealand (2020-2021)<a class="headerlink" href="#new-zealand-2020-2021" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="new_zealand/south_island.html">South Island Trip (2021)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="new_zealand/south_island.html#resources">Resources:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="new_zealand/south_island.html#notes">Notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="new_zealand/south_island.html#itinerary">Itinerary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="new_zealand/taranaki.html">Taranaki region (2020-2021)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="new_zealand/taranaki.html#lake-rotokare">Lake Rotokare</a></li>
-<li class="toctree-l2"><a class="reference internal" href="new_zealand/taranaki.html#pouakai">Pouakai</a></li>
-<li class="toctree-l2"><a class="reference internal" href="new_zealand/taranaki.html#resources">Resources:</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="new_zealand/wanganui.html">Wanganui</a></li>
-</ul>
+  <div class="section" id="tmux-shortcuts">
+<h1>tmux shortcuts<a class="headerlink" href="#tmux-shortcuts" title="Permalink to this headline">¶</a></h1>
+<p>Leader character is how to send results to tmux.
+System default is Ctrl + b, remapped to Ctrl + a.</p>
+<div class="section" id="scroll-mode">
+<h2>Scroll mode<a class="headerlink" href="#scroll-mode" title="Permalink to this headline">¶</a></h2>
+<p><code class="code docutils literal notranslate"><span class="pre">&lt;Leader&gt;</span> <span class="pre">[</span></code> to enter scoll mode.
+<code class="code docutils literal notranslate"><span class="pre">q</span></code> to quit.</p>
 </div>
 </div>
 
@@ -178,8 +175,8 @@
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="../../index.html" title="previous page">Welcome to RandomResources’s documentation!</a>
-    <a class='right-next' id="next-link" href="new_zealand/south_island.html" title="next page">South Island Trip (2021)</a>
+    <a class='left-prev' id="prev-link" href="../trips/new_zealand/wanganui.html" title="previous page">Wanganui</a>
+    <a class='right-next' id="next-link" href="vim_and_window_management.html" title="next page">Using tmux and vim together</a>
 
               </div>
               
