@@ -82,6 +82,51 @@ Longitude and Latitude of Terns
 
 39.2352° S, 174.0374° E
 
+Tarn location: -39.23140724316514, 174.04817853760065
+
+Peak location: -39.055626, 174.075226
+
+From google maps, the peak is 8 degrees east of south.
+
+Getting the bearing we have, in general
+
+.. math::
+
+   \beta = \arctan(X/Y), \quad\quad X = \cos\theta_b\,\sin\Delta L, \quad\quad Y = \cos\theta_a \sin\theta_b - \sin\theta_a \cos\theta_b \cos\Delta L
+
+where :math:`\beta` is the bearing between the two points.
+
+Limit of close points
+:::::::::::::::::::::
+
+If two points are close, we can assume $\Delta L$ is small. If they are far from the poles, we also have small :math:`\Delta \theta`. In radians
+
+.. math::
+
+   X \approx \Delta L\,\, \cos\theta_b
+
+The expression for Y is trickier
+
+.. math::
+
+   Y \approx \sin\theta_b\cos\theta_a - \sin(\theta_a)\cos_\theta_b(1 - \Delta L^2/2) = \sin(\theta_b - \theta_a) + \sin(\theta_a) \cos(\theta_b)(\Delta L)^2/2
+   X/Y \approx \frac{\cos\theta_b}{\sin(\theta_b-\theta_a) + \sin(\theta_a) \cos(\theta_b) (\Delta L)^2/2} \Delta L= \frac{2\cos\theta_b}{2\frac{\Delta \theta}{\Delta L} + \sin\theta_a\cos\theta_b\,\Delta L}
+
+Near 
+In the limit of small :math:`\Delta L`, we have :math:`X \approx \cos\theta_b \,\Delta L` and :math:`Y\approx \cos\theta_a \sing\theta_b - \sin\theta_a\cos\theta_b = sin(\theta_b - \theta_a)`.  Therefore
+
+.. math::
+
+   \beta \approx \arctan(\Delta L \cos\theta_b/\sin(\theta_b - \theta_a))
+
+
+
+
+.. math::
+
+   X = cos(174.04817853760065^\circ) sin(0.17578^\circ) = (-0.9946)(0.00306797) = -0.00305143
+   Y \approx sin(\theta_b - \theta_a) = \sin(-0.027048^\circ) = -0.00047207
+   \beta = \arctan(6.4638) 
 
 Resources:
 ----------
