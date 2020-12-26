@@ -11,8 +11,10 @@ Confirmation number 3913513317. Booked through Booking.com, and email in damien.
 2020-01-12
 ~~~~~~~~~~
 
-* Drive to Bluff
-* Ferry to Oban, Stewart Island
+* Drive to Bluff (approx 1hr 15 minutes from motel)
+* Ferry to Oban, Stewart Island.
+
+  Ferries depart at 9:45 am, 1:30 pm, and 5:15 pm
 * Wild Kiwi Encounter at 2030. 
   Meet at Visitor Terminal, Stewart Island 9818, at 20:10 (check-in).
 
@@ -28,4 +30,5 @@ Confirmation number 3913513317. Booked through Booking.com, and email in damien.
 * Checkout of hotel.
 * Can do Ulva Island tour (not yet booked)
 * Ferry back
-* Stay in either Bluff or Invercargill
+* Stay in Invercargill (airbnb)
+

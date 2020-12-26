@@ -82,14 +82,9 @@ Should see Shona's daughter in Chch, and Judy in Queenstown.
 `Google sheet
 <https://docs.google.com/spreadsheets/d/1fua8OPfZLXCiNRFkVtrzVgDZCzwdZhikpEdSQSdXDQE/edit#gid=0>`__, where we are prepping.
 
-.. warning::
-  
-   This is my note
-
-.. todo::
-
-   Also a note!
 
 .. itinerary::
 
     Also another note
+
+.. itinerarylist::

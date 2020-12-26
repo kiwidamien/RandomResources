@@ -47,9 +47,13 @@ in the Catlins.
 
 If visiting Cathedral Caves on this day, only available from 1702 -- 2002.
 
-Stay at the Lazy Dolphin (Curio Bay).
+Stay at Curio Bay Salthouse Motel and Apartment (Expedia booking)
 
+> 517 Waikawa-Curio Bay Road,
+> Tokanui 9884, 
+> New Zealand
 
+Itinerary number #72016339755261, through damien.j.martin
 
 2021-01-11
 ~~~~~~~~~~
@@ -63,4 +67,4 @@ Stay at the Lazy Dolphin (Curio Bay).
 * Fort Rose Lighthouse
 * Sunset: 2135
 
-Stay at the Lazy Dolphin again.
+Stay at the Curio Bay Salthouse Motel again.

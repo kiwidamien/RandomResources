@@ -78,7 +78,7 @@ def process_itinerary_nodes(app, doctree, fromdocname):
                             f'line {itinerary_info["lineno"]}')
             paragraph += nodes.Text(description, description)
 
-            new_node = nodes.references('', '')
+            new_node = nodes.reference('', '')
             inner_node = nodes.emphasis(_('here'), _('here'))
             new_node['refdocname'] = itinerary_info['docname']
             new_node['refuri'] = app.builder.get_relative_uri(
@@ -87,7 +87,7 @@ def process_itinerary_nodes(app, doctree, fromdocname):
             new_node['refuri'] += f'#{itinerary_info["target"]["refid"]}'
             new_node.append(inner_node)
             paragraph += new_node
-            paragrpah += nodes.Text('.)', '.)')
+            paragraph += nodes.Text('.)', '.)')
 
             content.append(itinerary_info['itinerary'])
             content.append(paragraph)
