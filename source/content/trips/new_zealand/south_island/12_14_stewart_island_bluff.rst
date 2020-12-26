@@ -4,7 +4,7 @@ Destination 3: Stewart Island
 
 While on the island, we will be staying at Stewart Island Backpackers
 
-> 18 Ayr Street, Half Moon Bay, Half-moon Bay, 9818, New Zealand
+| 18 Ayr Street, Half Moon Bay, Half-moon Bay, 9818, New Zealand
 
 Confirmation number 3913513317. Booked through Booking.com, and email in damien.j.martin address.
 

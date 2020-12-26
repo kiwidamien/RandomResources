@@ -18,8 +18,8 @@ Destination 6: Lake Tekapo
 Stay overnight at Tekapo (airbnb). 
 Self checkin, contact John on +64 21 08 783 800
 
-> 13 Allan Street, 
-> Lake Tekapo 7999, New Zealand
+| 13 Allan Street, 
+| Lake Tekapo 7999, New Zealand
 
 This is a :ref:`nice guide <https://danielmurray.nz/a-brief-guide-to-lake-tekapo/>`__.
 

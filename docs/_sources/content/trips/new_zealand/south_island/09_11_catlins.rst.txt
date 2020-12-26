@@ -21,9 +21,9 @@ Sleep at Catlin's New Haven Holiday Park.
 :ref:`Expedia reservation link <https://www.expedia.co.nz/trips/887a5456-67bb-51e1-a302-0d41c83652f5?falcon=true>`__.
 Address is 
 
-> 324 Newhaven Rd,
-> New Haven,
-> Otago 9585
+| 324 Newhaven Rd,
+| New Haven,
+| Otago 9585
 
 Notes on checkin:
 
@@ -49,9 +49,9 @@ If visiting Cathedral Caves on this day, only available from 1702 -- 2002.
 
 Stay at Curio Bay Salthouse Motel and Apartment (Expedia booking)
 
-> 517 Waikawa-Curio Bay Road,
-> Tokanui 9884, 
-> New Zealand
+| 517 Waikawa-Curio Bay Road,
+| Tokanui 9884, 
+| New Zealand
 
 Itinerary number #72016339755261, through damien.j.martin
 

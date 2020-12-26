@@ -11,9 +11,9 @@ Destination 4: Bluff/Invercargill
 
 Staying at an AirBnb (checkout after 3, told host to expect us 5--6pm).
 
-> 439 Herbert Street
-> corner Abbot St., 
-> Invercargill, Southland 9810
+| 439 Herbert Street
+| corner Abbot St., 
+| Invercargill, Southland 9810
 
 2020-01-14
 ~~~~~~~~~~

@@ -29,8 +29,8 @@ Otherwise we can see on the 19th/20th on the way to Haast.
 
 Staying overnight next to Wanaka (Sleepy Albert Town Sleepout on Airbnb)
 
-> 19 Arklow Street
-> Albert Town 9382
+| 19 Arklow Street
+| Albert Town 9382
 
 10 minute drive from there to Wanaka Tree
 
