@@ -28,6 +28,10 @@ Welcome to RandomResources's documentation!
 
    content/photo/astro/*
 
+.. note::
+
+  Hello!
+
 
 Indices and tables
 ==================

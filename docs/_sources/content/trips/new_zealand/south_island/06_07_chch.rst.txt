@@ -1,0 +1,13 @@
+Destination 1: Christchurch
+===========================
+
+.. itinerary::
+   arrive: 2021-01-06
+   depart: 2021-01-07
+
+   See Shona and Orana Park Zoo.
+
+Fly in from New Plymouth. Flight is NP -> Chch, departing at 11:35 am.
+
+Stay with Shona (to confirm).
+
