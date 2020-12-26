@@ -2,9 +2,17 @@ South Island Trip (2021)
 ========================
 
 
-.. note::
+From rough ideas to a plan!
+---------------------------
 
-  This is a secret note.
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   south_island/*
+
+
+.. itinerarylist::
 
 
 Resources:
@@ -82,9 +90,3 @@ Should see Shona's daughter in Chch, and Judy in Queenstown.
 `Google sheet
 <https://docs.google.com/spreadsheets/d/1fua8OPfZLXCiNRFkVtrzVgDZCzwdZhikpEdSQSdXDQE/edit#gid=0>`__, where we are prepping.
 
-
-.. itinerary::
-
-    Also another note
-
-.. itinerarylist::
