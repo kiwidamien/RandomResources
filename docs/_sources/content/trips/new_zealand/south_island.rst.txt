@@ -48,7 +48,8 @@ Resources:
   
   * Go to Nelson Market, if we have time
 * Sutherland Falls
-
+* This :ref:`hidden gems <https://www.wedreamoftravel.com/new-zealand-landscape-photography/>`__ article is also quite good.
+* A :ref:`guide to the south island for photographers <https://danielmurray.nz/a-brief-guide-to-the-south-island-for-landscape-photographers/>`__
 
 Notes
 -----
@@ -57,8 +58,6 @@ Contact Shona's daughter, stay with her in Christchurch.
 Out near the animal park.
 
 Couple of days in Chch
-
-
 
 
 Elm Wildlife Tours
@@ -77,8 +76,26 @@ Catlins
 ~~~~~~~
 
 I have been to Nugget Point before, and to the Catlins. Last time I was not able to stay in the Catlins to see the yellow-eyed penguins
-come back to the beach, and that is highly reviewed (e.g. `here <https://www.tripadvisor.com/ShowUserReviews-g7382821-d3600126-r159803132-Curio_Bay_Natural_Heritage_Centre-Curio_Bay_Southland_Region_South_Island.html>`__  which makes it sound easy, and `here <http://blog.forestandbird.org.nz/hoiho-spotting-at-curio-bay/?gclid=Cj0KCQiAwf39BRCCARIsALXWETyySShRPWolHKFLxefQIdOGy7PeT4C5G47qVCg0A8u7syI74KJaDt0aAmqDEALw_wcB>`__  makes it seem more like a challenge>`__ 
+come back to the beach, and that is highly reviewed (e.g. :ref:`here <https://www.tripadvisor.com/ShowUserReviews-g7382821-d3600126-r159803132-Curio_Bay_Natural_Heritage_Centre-Curio_Bay_Southland_Region_South_Island.html>`__  which makes it sound easy, and `here <http://blog.forestandbird.org.nz/hoiho-spotting-at-curio-bay/?gclid=Cj0KCQiAwf39BRCCARIsALXWETyySShRPWolHKFLxefQIdOGy7PeT4C5G47qVCg0A8u7syI74KJaDt0aAmqDEALw_wcB>`__  makes it seem more like a challenge 
 
+
+Hidden Gems
+-----------
+
+:ref:`This article <https://www.wedreamoftravel.com/new-zealand-landscape-photography/>`__ lays out some nice places to visit, 
+with an emphasis on photography.
+
+Special ideas for 
+
+* Mt Cook (Road, Tasman Lake, Hooker Lake, Lindis Pass from Queenstown to Mt Cook)
+* Wanaka (Roy's Peak, Rocky Peak)
+* Glacier Burn near Kinlock (past Glengorchy and Queenstown). 
+  Glenorchy Pier also gives a good view of the remarkables.
+* Tunnel beach (if overcast) in Dunedin
+
+
+:ref:`This map <https://www.wedreamoftravel.com/south-island-new-zealand-map/>`__
+is another great resource.
 
 Itinerary
 ---------
