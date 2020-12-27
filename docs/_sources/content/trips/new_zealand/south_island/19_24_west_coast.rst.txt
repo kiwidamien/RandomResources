@@ -24,12 +24,14 @@ Destination 8: West Coast
 ~~~~~~~~~~
 
 * Stay at Lake Matheson by Glacier
+* Low tide is at 1040, 2309
 
 2020-01-22
 ~~~~~~~~~~
 
 * Sunrise at Lake Matheson
-* Motukiekie beach
+* :ref:`Motukiekie beach <https://www.zigzagonearth.com/motukiekie-beach-new-zealand/>`__
+  Have to go at low tide. Low tide at 0004, 1134, and (next day) 0104
 * Stay in Hokitika or Greymouth?
 
 2020-01-23
