@@ -28,6 +28,8 @@ Welcome to RandomResources's documentation!
 
    content/photo/astro/*
 
+.. toctree::
+   content/card_problem
 
 Indices and tables
 ==================

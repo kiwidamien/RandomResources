@@ -39,3 +39,9 @@ Staying overnight next to Wanaka (Sleepy Albert Town Sleepout on Airbnb)
 
 * Sunrise: 0619 (good to do Wanaka tree again). Rise at 0515.
 * Maybe do Roy's Peak? Pretty close to downtown, significant walk.
+
+If short on time, there is Rocky Mountain track. From the previous link
+
+| Rocky Mountain Track is another one of my favorite short Wanaka walks, and also a bit of a local secret. It’s on the way out to Mt. Aspiring National Park and is a nice little climb up to a big hill with views of the surrounding mountains and lake. This is a good hike to do if you don’t have a lot of time in Wanaka. It usually takes me an hour up and less than an hour down – it’s about 20 minutes from town.
+
+
