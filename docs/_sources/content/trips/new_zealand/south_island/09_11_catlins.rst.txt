@@ -1,4 +1,4 @@
-Destination 2: Dunedin
+Destination 3: Catlins
 ======================
 
 .. itinerary::
