@@ -32,4 +32,4 @@ Resize panes
         PREFIX : resize-pane -t 2 20 (Resizes the pane with the id of 2 down by 20 cells)
         PREFIX : resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cells)
 
-From :ref:`this list <https://gist.github.com/MohamedAlaa/2961058>`__ of nifty tmux shortcuts
+From `this list <https://gist.github.com/MohamedAlaa/2961058>`__ of nifty tmux shortcuts

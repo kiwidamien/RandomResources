@@ -11,7 +11,7 @@ Booking at the YHA in Mount Cook village all days, with Mueller hut stay on the 
 of the 18th.
 
 
-Keep :ref:`this guide <https://danielmurray.nz/a-brief-guide-to-aoraki-mt-cook-national-park/>`__
+Keep `this guide <https://danielmurray.nz/a-brief-guide-to-aoraki-mt-cook-national-park/>`__
 in mind for selecting out shots. The `wedreamoftravel <https://www.wedreamoftravel.com/new-zealand-landscape-photography/#New_Zealand_Landscape_Photography_1_Mount_Cook_and_Aoraki>`__
 blog also has some great Mt Cook sections.
 

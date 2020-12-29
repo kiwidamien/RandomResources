@@ -48,8 +48,18 @@ Resources:
   
   * Go to Nelson Market, if we have time
 * Sutherland Falls
-* This :ref:`hidden gems <https://www.wedreamoftravel.com/new-zealand-landscape-photography/>`__ article is also quite good.
-* A :ref:`guide to the south island for photographers <https://danielmurray.nz/a-brief-guide-to-the-south-island-for-landscape-photographers/>`__
+* This `hidden gems <https://www.wedreamoftravel.com/new-zealand-landscape-photography/>`__ article is also quite good.
+* A `guide to the south island for photographers <https://danielmurray.nz/a-brief-guide-to-the-south-island-for-landscape-photographers/>`__. Incluedes an itinerary
+
+| Day 1  Christchurch – Tekapo (245 km, 3 hrs)
+| Day 2  Tekapo – Mt Cook (115 km, 1 hr 45 mins)
+| Day 3  Mt Cook – Wanaka (210 km, 2 hrs 30 mins)
+| Day 4  Wanaka – Queenstown (70 km, 1 hr 10 mins)
+| Day 5  Queenstown – Milford Sound  (290 km, 4 hrs)
+| Day 6  Milford Sound – Queenstown (290 km, 4 hrs)
+| Day 7  Queenstown – Fox Glacier (330 km,  4 hrs 30 mins)
+| Day 8  Fox Glacier – Punakaiki (240 km, 3 hrs 15 mins)
+| Day 9  Punakaiki – Christchurch (290 km, 4 hrs)
 
 Notes
 -----
@@ -76,13 +86,13 @@ Catlins
 ~~~~~~~
 
 I have been to Nugget Point before, and to the Catlins. Last time I was not able to stay in the Catlins to see the yellow-eyed penguins
-come back to the beach, and that is highly reviewed (e.g. :ref:`here <https://www.tripadvisor.com/ShowUserReviews-g7382821-d3600126-r159803132-Curio_Bay_Natural_Heritage_Centre-Curio_Bay_Southland_Region_South_Island.html>`__  which makes it sound easy, and `here <http://blog.forestandbird.org.nz/hoiho-spotting-at-curio-bay/?gclid=Cj0KCQiAwf39BRCCARIsALXWETyySShRPWolHKFLxefQIdOGy7PeT4C5G47qVCg0A8u7syI74KJaDt0aAmqDEALw_wcB>`__  makes it seem more like a challenge 
+come back to the beach, and that is highly reviewed (e.g. `here <https://www.tripadvisor.com/ShowUserReviews-g7382821-d3600126-r159803132-Curio_Bay_Natural_Heritage_Centre-Curio_Bay_Southland_Region_South_Island.html>`__  which makes it sound easy, and `here <http://blog.forestandbird.org.nz/hoiho-spotting-at-curio-bay/?gclid=Cj0KCQiAwf39BRCCARIsALXWETyySShRPWolHKFLxefQIdOGy7PeT4C5G47qVCg0A8u7syI74KJaDt0aAmqDEALw_wcB>`__  makes it seem more like a challenge 
 
 
 Hidden Gems
 -----------
 
-:ref:`This article <https://www.wedreamoftravel.com/new-zealand-landscape-photography/>`__ lays out some nice places to visit, 
+`This article <https://www.wedreamoftravel.com/new-zealand-landscape-photography/>`__ lays out some nice places to visit, 
 with an emphasis on photography.
 
 Special ideas for 
@@ -94,7 +104,7 @@ Special ideas for
 * Tunnel beach (if overcast) in Dunedin
 
 
-:ref:`This map <https://www.wedreamoftravel.com/south-island-new-zealand-map/>`__
+`This map <https://www.wedreamoftravel.com/south-island-new-zealand-map/>`__
 is another great resource.
 
 Itinerary

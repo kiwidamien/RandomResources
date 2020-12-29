@@ -18,7 +18,7 @@ Destination 3: Catlins
 Checkin by 5 pm. 
 
 Sleep at Catlin's New Haven Holiday Park. 
-:ref:`Expedia reservation link <https://www.expedia.co.nz/trips/887a5456-67bb-51e1-a302-0d41c83652f5?falcon=true>`__.
+`Expedia reservation link <https://www.expedia.co.nz/trips/887a5456-67bb-51e1-a302-0d41c83652f5?falcon=true>`_.
 Address is 
 
 | 324 Newhaven Rd,
@@ -33,16 +33,16 @@ Notes on checkin:
 ~~~~~~~~~~
 
 * Sunrise: 0600
-* Parakanui Falls (< 1 hour), :ref:`map <https://www.tripadvisor.co.nz/Attraction_Review-g1773668-d6556260-Reviews-Purakaunui_Falls_Walk-Papatowai_Otago_Region_South_Island.html>`__.
+* Parakanui Falls (< 1 hour), :ref:`map <https://www.tripadvisor.co.nz/Attraction_Review-g1773668-d6556260-Reviews-Purakaunui_Falls_Walk-Papatowai_Otago_Region_South_Island.html>`_.
   If time, Maitai Falls are about 10 minutes south from here.
 * Gypsy Cafe
-* :ref:`McLean Falls <https://www.tripadvisor.co.nz/Attraction_Review-g1773668-d6817213-Reviews-McLean_Falls-Papatowai_Otago_Region_South_Island.html>`__ (close to Chaslands).
+* `McLean Falls <https://www.tripadvisor.co.nz/Attraction_Review-g1773668-d6817213-Reviews-McLean_Falls-Papatowai_Otago_Region_South_Island.html>`__ (close to Chaslands).
   Whistling Frog in Chaslands is close by, and recommended as a good stop.
 * The mirror (Lake Wilkie)?
 * Curio Bay (penguin viewing)
 * Sunset: 2135
 
-:ref:`List of waterfalls <https://www.meghanmaloneyphotography.co.nz/post/nz-best-waterfalls-the-catlins>`__ 
+`List of waterfalls <https://www.meghanmaloneyphotography.co.nz/post/nz-best-waterfalls-the-catlins>`__ 
 in the Catlins.
 
 If visiting Cathedral Caves on this day, only available from 1702 -- 2002.
@@ -59,7 +59,7 @@ Itinerary number #72016339755261, through damien.j.martin
 ~~~~~~~~~~
 
 * Sunrise: 0601
-* :ref:`Cathedral Caves <https://www.cathedralcaves.co.nz/faq>` are tricky to get to (i.e. require advanced planning).
+* `Cathedral Caves <https://www.cathedralcaves.co.nz/faq>`__ are tricky to get to (i.e. require advanced planning).
   Can only go from 90 minutes before low tide to 60 minutes after low tide. 
   Visiting times are either 0730 to 0834 OR 1757 to 2057.
 

@@ -21,7 +21,7 @@ Self checkin, contact John on +64 21 08 783 800
 | 13 Allan Street, 
 | Lake Tekapo 7999, New Zealand
 
-This is a :ref:`nice guide <https://danielmurray.nz/a-brief-guide-to-lake-tekapo/>`__.
+This is a `nice guide <https://danielmurray.nz/a-brief-guide-to-lake-tekapo/>`__.
 
 
 2021-01-17

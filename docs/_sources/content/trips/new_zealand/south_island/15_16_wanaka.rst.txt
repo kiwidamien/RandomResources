@@ -15,13 +15,13 @@ Destination 5: Wanaka
 * Start in Invercargill
 * Visit Judy and Simon in Queenstown (Invercargill to Queenstown, 2 hours 23 mins)
 * Get to Wanaka (queenstown to wanaka, 1 hour 5 minutes)
-* See Blue Pools (:ref:`map <https://www.google.com/maps/dir//Blue+Pools+Track,+Otago+9382/@-44.1219417,169.2026877,11z/data=!4m9!4m8!1m0!1m5!1m1!1s0x6cd567214f3b18bd:0x8b6b8f11d7d5fe8e!2m2!1d169.274193!2d-44.1624221!3e0>`__)
+* See Blue Pools (`map <https://www.google.com/maps/dir//Blue+Pools+Track,+Otago+9382/@-44.1219417,169.2026877,11z/data=!4m9!4m8!1m0!1m5!1m1!1s0x6cd567214f3b18bd:0x8b6b8f11d7d5fe8e!2m2!1d169.274193!2d-44.1624221!3e0>`__)
   if time permits.
-* Sunset at Wanaka Tree (:ref:`map <https://www.google.com/maps?cid=4125306805829927092>`__)
+* Sunset at Wanaka Tree (`map <https://www.google.com/maps?cid=4125306805829927092>`__)
 * Sunset (at Wanaka): 2126
 
 Great views and overview of Wanaka at 
-:ref:`this site <https://youngadventuress.com/2015/01/best-views-wanaka.html>`__.
+`this site <https://youngadventuress.com/2015/01/best-views-wanaka.html>`__.
 
 Blue pools are past Wanaka, on the way to Haast. 
 It is about 55 minutes each way from Wanaka to the Blue Pools.
