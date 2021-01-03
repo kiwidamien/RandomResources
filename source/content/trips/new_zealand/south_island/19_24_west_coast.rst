@@ -20,17 +20,25 @@ Destination 8: West Coast
 * Dawn 06XX (Wanaka)
 * Drive to Haast (drive time approx 1hr 45 min)
   * `Things to see on route from Wanaka to Haast <https://jonistravelling.com/wanaka-to-west-coast-driving-new-zealand-scenic-road/>`_ include:
+
   * Lake Hawea / the neck
   * Blue Pools
   * Fantail Falls
   * Gates of Haast
   * Thunder Creek Falls (apparently THE falls to see, if picking one)
   * List things to see in Haast...
+
 * Stay by Fox Glacier (TB Booked)
 * See Lake Matherson at Sunset, want to get to view of views (30 mins/1.5 km from parking lot)
 * Sunset 2117 (Fox Glacier)
 * Moonrise at 1320 (44% illumination). Sets at 0059 the next day.
 
+
+From `this trip advisor thread <https://www.tripadvisor.co.nz/ShowTopic-g6659593-i34918-k12125101-Overnight_in_Hokitika_or_Greymouth-West_Coast_Region_South_Island.html>`_
+
+|  Lake Hawea, Makaroa, Blue Pools walk, Thunder Creek Falls, Fantail Falls, Pleasant Flats, Roaring Billy Falls, Haast Bridge and Rapids, Ship Creek, Knights Point Lookout, Lake Moeraki.
+
+when asking about things to do between Wanaka and Haast.
 
 Staying at **Rainforest Motel** in Fox Glacier (booked via Expedia, `# 72021897943653 <https://www.expedia.co.nz/trips/e9f8c7fa-53d1-5e36-8662-980a2a2915b0?falcon=true>`_ and emailed to damien.j.martin)
 
@@ -65,7 +73,7 @@ Or, to be super fancy: 	S 042° 43.573, E 170° 59.643
 * Stay in Hokitika
 * Swing bridge / bush walk in Hokitika
 
-:ref:`This article <https://ponytail-pretty.com/2020/07/20/places-on-the-south-island-of-new-zealand-you-cant-miss/>`__
+`This article <https://ponytail-pretty.com/2020/07/20/places-on-the-south-island-of-new-zealand-you-cant-miss/>`_
 lists Hokitika as one of the "must see" places, and calls out the Hokitika gorge in particular.
 
 Still staying at **Woodland Glen Lodge**.
@@ -76,6 +84,7 @@ Still staying at **Woodland Glen Lodge**.
 * Arthur's pass
 * Otira Viaduct Lookout / Arthur's Pass Scenic Lookout. Just over the Waimakariri River.
 * On route, things to see (`this map <https://www.wedreamoftravel.com/south-island-new-zealand-map/>`__)
+  
   * Otira Viaduct
   * Devil's punchbowl
   * Cave Stream Scenic Reserve
