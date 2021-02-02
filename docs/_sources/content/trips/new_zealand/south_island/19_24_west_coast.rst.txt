@@ -13,6 +13,15 @@ Destination 8: West Coast
 
 * Drive to Wanaka, stay there overnight.
 
+Staying at AirBnb
+
+| 59 Aubrey Road, 
+| Wanaka, Otago 9305
+
+Reservation Code: HMDZQC59PX
+
+Check-in after 3:00pm
+
 
 2020-01-20
 ~~~~~~~~~~
@@ -51,6 +60,7 @@ Staying at **Rainforest Motel** in Fox Glacier (booked via Expedia, `# 720218979
 * Sunrise 0625 (Fox Glacier)
 * See Lake Matherson at Sunrise! Famous Dawn picture. Leave around 0515. Earlier if also want astro.
 * Can explore the glacier a bit -- maybe do a touristy activity?
+* Franz Joseph has some cool walks. There is a 20 minute one (to Sentinel Rock), which leads to Peter's Pool -- nice view of Glacier. `Youtube video <https://www.youtube.com/watch?v=fGK-Z2TPQLw>`_ containing these walks.
 * Drive to Hokitika (2 hours, 5 minutes)
 * Low tide is at 1040, 2309
 

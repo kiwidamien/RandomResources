@@ -25,6 +25,7 @@ Confirmation number 3913513317. Booked through Booking.com, and email in damien.
 ~~~~~~~~~~
 
 * Hike! Possible the Port William to Oban Walk.
+* Ulva Island (Ruggedy Range)
 
 
 2020-01-14 (Travel day)
@@ -32,6 +33,7 @@ Confirmation number 3913513317. Booked through Booking.com, and email in damien.
 
 * Checkout of hotel.
 * Can do Ulva Island tour (not yet booked)
-* Ferry back
+* Ferry back @ 3:30pm. Have in my Apple Wallet (booked through TripAdvisor -- trip out doesn't have apple wallet 
+  because I booked directly through 
 * Stay in Invercargill (airbnb)
 
