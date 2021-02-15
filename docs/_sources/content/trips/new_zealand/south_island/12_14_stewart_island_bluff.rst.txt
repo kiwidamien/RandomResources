@@ -14,7 +14,10 @@ Confirmation number 3913513317. Booked through Booking.com, and email in damien.
 * Drive to Bluff (approx 1hr 15 minutes from motel)
 * Ferry to Oban, Stewart Island.
 
-  Ferries depart at 9:45 am, 1:30 pm, and 5:15 pm
+  Ferries depart at 9:45 am, 1:30 pm, and 5:15 pm.
+
+  Ferry booked from 1:30 --> 2:30pm
+  
 * Wild Kiwi Encounter at 2030. 
   Meet at Visitor Terminal, Stewart Island 9818, at 20:10 (check-in).
 

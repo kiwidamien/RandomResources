@@ -29,7 +29,15 @@ Welcome to RandomResources's documentation!
    content/photo/astro/*
 
 .. toctree::
+   :maxdepth: 2
+   :caption: Python
+   :glob:
+
+   content/python/*
+
+.. toctree::
    content/card_problem
+   content/resume
 
 Indices and tables
 ==================
