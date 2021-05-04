@@ -36,6 +36,13 @@ Welcome to RandomResources's documentation!
    content/python/*
 
 .. toctree::
+   :maxdepth: 2
+   :caption: probabilistic programming
+   :glob:
+
+   content/prob_prog/*
+
+.. toctree::
    content/card_problem
    content/resume
 
