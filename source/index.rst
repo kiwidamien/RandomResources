@@ -12,7 +12,7 @@ Welcome to RandomResources's documentation!
    :caption: Trips
 
    content/trips/nz2020
-
+   content/trips/seattle_suggestions
 
 .. toctree::
    :maxdepth: 2
