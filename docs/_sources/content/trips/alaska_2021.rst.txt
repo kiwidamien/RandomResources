@@ -26,7 +26,7 @@ June 20 (Sunday)
 June 22 (Tuesday)
 -----------------
 
-Kayaking!
+`Kayaking! <https://www.kayakak.com/kayaking-trips/aialik-bay-glacier-trip/>`_
 
 June 26th (Saturday)
 --------------------
@@ -38,13 +38,13 @@ June 27th (Sunday)
 
 * Northwestern Cruise (check-in 8:30 AM, disembark 5:30PM).
 
-  `Tour link <https://majormarine.com/tour/8-5-hour-northwestern-fjord-cruise/>`
+  `Tour link <https://majormarine.com/tour/8-5-hour-northwestern-fjord-cruise/>`_
 
 June 28th (Monday)
 ------------------
 
 * Resurrection Bay Kayaking (6 PM - 10 PM), 
-  `link <https://www.kayakak.com/kayaking-trips/half-day-resurrection-bay-trip/>`
+  `link <https://www.kayakak.com/kayaking-trips/half-day-resurrection-bay-trip/>`_
 
 July 2nd (Friday)
 -----------------
@@ -82,13 +82,21 @@ Areas
 Anchorage
 ---------
 
+*June 19-20, July 2-5, July 8-11*
+
 Seward
 ------
+
+*June 20-July2*
+
+Useful list of `things to do in Seward <https://calledtowander.com/things-to-do-in-seward-alaska/>`_.
 
 Denali
 ------
 
+*July 5-8*
+
 Whittier
 --------
 
-
+*Day trip, July 9*
