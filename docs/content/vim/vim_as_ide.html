@@ -4,10 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Vim as IDE &#8212; RandomResources  documentation</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,111 +21,142 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Vimrc settings" href="vimrc.html" />
     <link rel="prev" title="Using tmux and vim together" href="vim_and_window_management.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
-<div class="container-xl">
+    <div class="container-fluid" id="banner"></div>
 
-    <a class="navbar-brand" href="../../index.html">
     
-      <p class="title">RandomResources</p>
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
     
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    
+<a class="navbar-brand" href="../../index.html">
+<p class="title">RandomResources</p>
+</a>
 
-    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
-      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
-        
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../trips/nz2020.html">New Zealand (2020-2021)</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../trips/seattle_suggestions.html">Seattle Suggestions</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="tmux_shortcuts.html">tmux shortcuts</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="vim_and_window_management.html">Using tmux and vim together</a>
-        </li>
-        
-        <li class="nav-item active">
-            <a class="nav-link" href="">Vim as IDE</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="vimrc.html">Vimrc settings</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../photo/astro/focal_length.html">Focal length and night photography</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href=""></a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href=""></a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../python/line_profiling.html">Line #    Hits    Time    Per Hit    % Time    Line Contents</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../prob_prog/resources.html">Probabilitic Programming resources</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../card_problem.html">Card Problem</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../resume.html">Resume</a>
-        </li>
-        
-        
-      </ul>
+    
+  </div>
 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
       
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../trips/nz2020.html">
+  New Zealand (2020-2021)
+ </a>
+</li>
 
-      <ul class="navbar-nav">
-        
-        
-      </ul>
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../trips/seattle_suggestions.html">
+  Seattle Suggestions
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../trips/alaska_2021.html">
+  Alaska (June 19-July 11, 2021)
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="tmux_shortcuts.html">
+  tmux shortcuts
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="vim_and_window_management.html">
+  Using tmux and vim together
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  Vim as IDE
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="vimrc.html">
+  Vimrc settings
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../photo/astro/focal_length.html">
+  Focal length and night photography
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../python/line_profiling.html">
+  Line #    Hits    Time    Per Hit    % Time    Line Contents
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../prob_prog/resources.html">
+  Probabilitic Programming resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../card_problem.html">
+  Card Problem
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../resume.html">
+  Resume
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
     </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
 </div>
     </nav>
     
@@ -131,7 +164,9 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
   <h4>Previous topic</h4>
   <p class="topless"><a href="vim_and_window_management.html"
                         title="previous chapter">Using tmux and vim together</a></p>
@@ -142,100 +177,121 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
 <script>$('#searchbox').show(0);</script>
-          </div>
+            </div>
+            
           
 
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
               
+              <div class="toc-item">
+                
 <div class="tocsection onthispage pt-5 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
 <nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#references" class="nav-link">References</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#operators-and-motion" class="nav-link">Operators and Motion</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#operators" class="nav-link">Operators:</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#motions" class="nav-link">Motions</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#buffers" class="nav-link">Buffers</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#windows" class="nav-link">Windows</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#window-commands" class="nav-link">Window commands</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#tabs" class="nav-link">Tabs</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#persistent-session-management-using-tmux" class="nav-link">Persistent session management using tmux</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#efficient-workflow-navigation" class="nav-link">Efficient workflow navigation</a>
-        </li>
-    
-    </ul>
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operators-and-motion">
+   Operators and Motion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operators">
+     Operators:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#motions">
+     Motions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#buffers">
+   Buffers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#windows">
+   Windows
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#window-commands">
+     Window commands
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tabs">
+   Tabs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#persistent-session-management-using-tmux">
+   Persistent session management using tmux
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#efficient-workflow-navigation">
+   Efficient workflow navigation
+  </a>
+ </li>
+</ul>
+
 </nav>
-
-
+              </div>
               
+              <div class="toc-item">
+                
+              </div>
+              
+            
           </div>
           
 
+          
+          
+            
           
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
                 
-  <div class="section" id="vim-as-ide">
+  <section id="vim-as-ide">
 <h1>Vim as IDE<a class="headerlink" href="#vim-as-ide" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="references">
+<section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=E-ZbrtoSuzw">Vim: tutorial on Editing, Navigation, and File Management (2018)</a></p></li>
 </ul>
-</div>
-<div class="section" id="operators-and-motion">
+</section>
+<section id="operators-and-motion">
 <h2>Operators and Motion<a class="headerlink" href="#operators-and-motion" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="operators">
+<section id="operators">
 <h3>Operators:<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Verbs of the VI language</p></li>
 <li><p>Act on text objects</p></li>
 </ul>
-</div>
-<div class="section" id="motions">
+</section>
+<section id="motions">
 <h3>Motions<a class="headerlink" href="#motions" title="Permalink to this headline">¶</a></h3>
 <table class="table">
 <colgroup>
@@ -293,15 +349,15 @@ Navigation at warp speed + tags</p>
 <li><p>Windows for buffer viewports</p></li>
 <li><p>Buffers for file proxies</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="buffers">
+</section>
+</section>
+<section id="buffers">
 <h2>Buffers<a class="headerlink" href="#buffers" title="Permalink to this headline">¶</a></h2>
 <p>Buffers represent file proxies.
 There is a buffer for every file visited in your VIM session.</p>
 <p>Argument list are the files you opened vim with</p>
-</div>
-<div class="section" id="windows">
+</section>
+<section id="windows">
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <p>Windows are NOT a mapping to files (those are buffers).
 Can have multiple windows on the same file! (e.g. different areas of the file).</p>
@@ -318,7 +374,7 @@ Can have multiple windows on the same file! (e.g. different areas of the file).<
 </tr>
 </tbody>
 </table>
-<div class="section" id="window-commands">
+<section id="window-commands">
 <h3>Window commands<a class="headerlink" href="#window-commands" title="Permalink to this headline">¶</a></h3>
 <table class="table">
 <colgroup>
@@ -354,48 +410,65 @@ Can have multiple windows on the same file! (e.g. different areas of the file).<
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="section" id="tabs">
+</section>
+</section>
+<section id="tabs">
 <h2>Tabs<a class="headerlink" href="#tabs" title="Permalink to this headline">¶</a></h2>
 <p>gt go to next tab
 gT</p>
-</div>
-<div class="section" id="persistent-session-management-using-tmux">
+</section>
+<section id="persistent-session-management-using-tmux">
 <h2>Persistent session management using tmux<a class="headerlink" href="#persistent-session-management-using-tmux" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="efficient-workflow-navigation">
+</section>
+<section id="efficient-workflow-navigation">
 <h2>Efficient workflow navigation<a class="headerlink" href="#efficient-workflow-navigation" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
               
               
-              <div class='prev-next-bottom'>
-                
-    <a class='left-prev' id="prev-link" href="vim_and_window_management.html" title="previous page">Using tmux and vim together</a>
-    <a class='right-next' id="next-link" href="vimrc.html" title="next page">Vimrc settings</a>
-
-              </div>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="vim_and_window_management.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Using tmux and vim together</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="vimrc.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vimrc settings</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
               
           </main>
           
 
       </div>
     </div>
-
-    
-  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    <footer class="footer mt-5 mt-md-0">
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
-    <p>
-          &copy; Copyright 2020, Damien Martin.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
-    </p>
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2020, Damien Martin.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
   </div>
 </footer>
   </body>
