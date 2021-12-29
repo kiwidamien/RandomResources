@@ -1,8 +1,9 @@
 Structure and Interpretation of Test Cases
 ==========================================
 
-* `Video Link <>`__
-* **tl dr:**
+* `Video Link <https://www.youtube.com/watch?v=APUCMSPiNh4>`__
+* Speaker: Kevlin Henney
+* Rating: 2/5
 
 Overview
 --------
