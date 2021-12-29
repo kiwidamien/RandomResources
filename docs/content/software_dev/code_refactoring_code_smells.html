@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Code Refactoring: Learn Code Smells &#8212; RandomResources  documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Structure and Interpretation of Test Cases" href="structure_and_interpretation_of_test_cases.html" />
+    <link rel="prev" title="Resume" href="../resume.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../index.html">
+<p class="title">RandomResources</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../trips/nz2020.html">
+  New Zealand (2020-2021)
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../trips/seattle_suggestions.html">
+  Seattle Suggestions
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../trips/alaska_2021.html">
+  Alaska (June 19-July 11, 2021)
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../vim/tmux_shortcuts.html">
+  tmux shortcuts
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../vim/vim_and_window_management.html">
+  Using tmux and vim together
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../vim/vim_as_ide.html">
+  Vim as IDE
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../vim/vimrc.html">
+  Vimrc settings
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../photo/astro/focal_length.html">
+  Focal length and night photography
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../python/line_profiling.html">
+  Line #    Hits    Time    Per Hit    % Time    Line Contents
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../prob_prog/resources.html">
+  Probabilitic Programming resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../card_problem.html">
+  Card Problem
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../resume.html">
+  Resume
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  Code Refactoring: Learn Code Smells
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="structure_and_interpretation_of_test_cases.html">
+  Structure and Interpretation of Test Cases
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../resume.html"
+                        title="previous chapter">Resume</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="structure_and_interpretation_of_test_cases.html"
+                        title="next chapter">Structure and Interpretation of Test Cases</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#details">
+   Details
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bloaters">
+     Bloaters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tool-misuse">
+     Tool misuse
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#change-preventers">
+     Change Preventers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dispensibles">
+     Dispensibles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#couplers">
+     Couplers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-example">
+     Code example
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="code-refactoring-learn-code-smells">
+<h1>Code Refactoring: Learn Code Smells<a class="headerlink" href="#code-refactoring-learn-code-smells" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=D4auWwMsEnY">Video link</a></p></li>
+<li><p>Speaker: Sandi Metz</p></li>
+<li><p>Rating: 5/5</p></li>
+</ul>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Code smells are NOT just “I don’t like how you w</p></li>
+</ul>
+</section>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Code smells are NOT just “I don’t like your code”. Code smells are not necessarily bad.
+Code smells are indications that something <strong>might</strong> be wrong.</p></li>
+<li><p>Code smells have specific names, and specific solutions. There are 22 different named code smells from Ken Bent.
+These code smells have been grouped into the following 5 groups (with two thrown away).
+- Bloaters
+- Tool
+- Change Preventers
+- Dispensibles
+- Couplers</p></li>
+<li><p>The two thrown away were “comments” and “incomplete library code” (not addressed again in this talk, but enough has been written on</p></li>
+<li><p>Refactorings have names and recipies: if you can identify your code smell, there is a recipe on how to fix it.</p></li>
+</ul>
+<section id="bloaters">
+<h3>Bloaters<a class="headerlink" href="#bloaters" title="Permalink to this headline">¶</a></h3>
+<p>“Makes code bigger than it needs to be when used”</p>
+<p>Code smells are</p>
+<ul class="simple">
+<li><p>Long Method</p></li>
+<li><p>Large class</p></li>
+<li><p>Data Clumps</p></li>
+<li><p>Long Parameter List</p></li>
+<li><p>Primitive Obsession</p></li>
+</ul>
+<p>Primitive Obsession probably the only one that needs elaboration. It is when a primitive is standing in for something else.
+For example, if you have different behaviors based on a number or string passed in.
+(e.g. if <code class="code docutils literal notranslate"><span class="pre">order_type</span></code> is 6 do this, if <code class="code docutils literal notranslate"><span class="pre">order_type</span></code> is 8 do something else).
+Basically we can think of this as an ENUM using primatives.
+The objects you are talking to are too dumb to</p>
+</section>
+<section id="tool-misuse">
+<h3>Tool misuse<a class="headerlink" href="#tool-misuse" title="Permalink to this headline">¶</a></h3>
+<p>Code smells are</p>
+<ul class="simple">
+<li><p>Switch statements</p></li>
+<li><p>Refused Bequest</p></li>
+<li><p>Alternative Classes with Different Interfaces</p></li>
+<li><p>Temporary Field</p></li>
+</ul>
+<p>A <strong>refused bequest</strong> is a problem that occurs when a child class refuses to implement a parent class method.
+Generally points to the wrong abstraction getting used in your object model</p>
+</section>
+<section id="change-preventers">
+<h3>Change Preventers<a class="headerlink" href="#change-preventers" title="Permalink to this headline">¶</a></h3>
+<p>“Things that make you not want to change code, or makes code hard to change”</p>
+<p>Code smells are</p>
+<ul class="simple">
+<li><p>Divergent Cahnge</p></li>
+<li><p>Shotgun Surgery</p></li>
+<li><p>Parallel Inheritance</p></li>
+</ul>
+</section>
+<section id="dispensibles">
+<h3>Dispensibles<a class="headerlink" href="#dispensibles" title="Permalink to this headline">¶</a></h3>
+<p>“”</p>
+<p>Code smells are</p>
+<ul class="simple">
+<li><p>Lazy Class</p></li>
+<li><p>Speculative Generality</p></li>
+<li><p>Data Class: should have behavior as well as data in classes</p></li>
+<li><p>Duplicated Code</p></li>
+</ul>
+</section>
+<section id="couplers">
+<h3>Couplers<a class="headerlink" href="#couplers" title="Permalink to this headline">¶</a></h3>
+<p>“Objects that could not be used in another context, they come as a bundle”</p>
+<p>Code smells are</p>
+<ul class="simple">
+<li><p>Feature envy: An object sends more messages to another object than it sends to itself (i.e. really wants some features of another object)</p></li>
+<li><p>Inappropriate intimacy: Accessing private methods of another object</p></li>
+<li><p>Message Chains: Long chained methods where the types change, and you call a method on the changed type. See below for example</p></li>
+<li><p>Middle Man: An object that only exists to pass messages between objects</p></li>
+</ul>
+<p>A small diversion on message chains (aka Law of Dementer violations).
+The following is NOT an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataframe_selection</span> <span class="o">=</span> <span class="p">(</span><span class="n">client_df</span>
+                         <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state == &quot;CA&quot;&#39;</span><span class="p">)</span>
+                         <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;age &lt; 35&#39;</span><span class="p">)</span>
+                         <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;age &gt; 20&#39;</span><span class="p">)</span>
+                       <span class="p">)</span>
+</pre></div>
+</div>
+<p>This code keeps dealing with dataframes. We have accepted that the client code knows how to call methods on dataframes (we have <code class="code docutils literal notranslate"><span class="pre">client_df.XXXXXXX</span></code>).
+Since <code class="code docutils literal notranslate"><span class="pre">query(....)</span></code> returns a dataframe, we have not increased the number of types we need to know about.</p>
+<p>This is also NOT an example of a Law of Demeter violation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">n_targeted_clients</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">client_df</span>
+                            <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state == &quot;CA&quot;&#39;</span><span class="p">)</span>
+                            <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;age &lt; 35&#39;</span><span class="p">)</span>
+                            <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;age &gt; 20&#39;</span><span class="p">)</span>
+                            <span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It also isn’t how you would write this code! The <code class="code docutils literal notranslate"><span class="pre">.shape</span></code> at the end does transform types (from dataframe to tuple) but we don’t call additional methods
+on the tuple. We have already accepted that the client code knows about the dataframe API, and we have not extended information to the tuple API (you could argue about
+the use of unpacking).</p>
+<p>This <em>is</em> a violation of the Law of Demeter:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n_targeted_clients</span> <span class="o">=</span>  <span class="p">(</span><span class="n">client_df</span>
+                        <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state == &quot;CA&quot;&#39;</span><span class="p">)</span>
+                        <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;age &lt; 35&#39;</span><span class="p">)</span>
+                        <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;age &gt; 20&#39;</span><span class="p">)</span>
+                        <span class="o">.</span><span class="n">client_id</span>
+                        <span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+                      <span class="p">)</span>
+</pre></div>
+</div>
+<p>We have moved from a dataframe to a series, and then called a method on the series.
+Thus our client is expected to know about both the DataFrame API <strong>and</strong> the Series API.
+This indicates that the DataFrame and Series APIs are tightly coupled, which should not be a surprise.
+It is a Law of Demeter violation, but probably not one worth addressing as it makes sense for these different Pandas objects to be tightly coupled.</p>
+<p>Note the following does NOT fix it</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This line is okay, only one type change and no methods called</span>
+<span class="n">clients</span> <span class="o">=</span> <span class="p">(</span><span class="n">client_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state == &quot;CA&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;age &lt; 35&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;age &gt; 20&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">client_id</span>
+
+<span class="c1"># This line (by itself) is also okay, only using Series API</span>
+<span class="n">n_targeted_clients</span> <span class="o">=</span> <span class="n">clients</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>There is no single line that violates the Law of Demeter here, but the lines taken together means the client has to know both the DataFrame API and
+the Series API.
+The code, taken together, is a violation of the Law of Demeter.</p>
+<p>Note that almost all groupby statements in pandas aer going to be law of demeter violations.
+This is okay; going back to the opening statement code smells are an indication that something might be wrong.
+You might be willing to treat pandas (DataFrame, Series, Grouper) as a whole tightly coupled unit, which would make tagging Law of Demeter violations more useful.</p>
+</section>
+<section id="code-example">
+<h3>Code example<a class="headerlink" href="#code-example" title="Permalink to this headline">¶</a></h3>
+<p>At 20:20, the second refactoring for MessageChains begins. There are three classes, that implement something similar to SQLAlchemcy</p>
+<p>It is okay for our object to know about Expense (sends the message <code class="code docutils literal notranslate"><span class="pre">where</span></code>), but it isn’t okay for our object to know about how to use what <code class="code docutils literal notranslate"><span class="pre">where</span></code> returns (an ActiveRecord/SqlAlchemy
+record).</p>
+<p>Way it was described was if testing our object, we would need to mock or implement <code class="code docutils literal notranslate"><span class="pre">Expense</span></code> and <code class="code docutils literal notranslate"><span class="pre">range</span></code>.
+As written, we would also have to know about <code class="code docutils literal notranslate"><span class="pre">ActiveRecord</span></code> to implement the <code class="code docutils literal notranslate"><span class="pre">sum</span></code> method.
+We now have to worry about which methods in <code class="code docutils literal notranslate"><span class="pre">ActiveRecord</span></code> we have to mock to make things run.</p>
+<p>Answer would be to move the total method into <cite>Expense</cite></p>
+<p>The big question that comes up when you do this is, and if you mock out Expense, you don’t test the query.
+If you don’t mock it out, calling <code class="code docutils literal notranslate"><span class="pre">Foo.expense_total</span></code> runs the real query, so your tests run really slowly.</p>
+<p>We want fast tests, that reflect reality.
+Solution presented was to generalize Expense to derive from an ABC or Protocol (e.g. <code class="code docutils literal notranslate"><span class="pre">Totalizable</span></code>) and use dependency injection.
+Write a mock Totalizable that doesn’t require a query.</p>
+<p>Pros:</p>
+<ul class="simple">
+<li><p>Tests run really fast</p></li>
+<li><p>We are testing our protocol behavior (total returns an object of the right type)</p></li>
+</ul>
+<p>Cons:</p>
+<ul class="simple">
+<li><p>Not testing SQLAlchemy or ActiveRecord (but they have extensive tests)</p></li>
+<li><p>Not testing our schemas (argument here is that we have Expense own the queries, so we have a small number of objects that run real queries)</p></li>
+<li><p>Makes methods longer (we have to inject the dependency)</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../resume.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Resume</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="structure_and_interpretation_of_test_cases.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Structure and Interpretation of Test Cases</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2020, Damien Martin.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Structure and Interpretation of Test Cases &#8212; RandomResources  documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Code Refactoring: Learn Code Smells" href="code_refactoring_code_smells.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../index.html">
+<p class="title">RandomResources</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../trips/nz2020.html">
+  New Zealand (2020-2021)
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../trips/seattle_suggestions.html">
+  Seattle Suggestions
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../trips/alaska_2021.html">
+  Alaska (June 19-July 11, 2021)
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../vim/tmux_shortcuts.html">
+  tmux shortcuts
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../vim/vim_and_window_management.html">
+  Using tmux and vim together
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../vim/vim_as_ide.html">
+  Vim as IDE
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../vim/vimrc.html">
+  Vimrc settings
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../photo/astro/focal_length.html">
+  Focal length and night photography
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../python/line_profiling.html">
+  Line #    Hits    Time    Per Hit    % Time    Line Contents
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../prob_prog/resources.html">
+  Probabilitic Programming resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../card_problem.html">
+  Card Problem
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../resume.html">
+  Resume
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="code_refactoring_code_smells.html">
+  Code Refactoring: Learn Code Smells
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  Structure and Interpretation of Test Cases
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="code_refactoring_code_smells.html"
+                        title="previous chapter">Code Refactoring: Learn Code Smells</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-leap-year-problem">
+     The Leap Year Problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stack">
+     Stack
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-comments">
+     Other comments
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="structure-and-interpretation-of-test-cases">
+<h1>Structure and Interpretation of Test Cases<a class="headerlink" href="#structure-and-interpretation-of-test-cases" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a href="#id1"><span class="problematic" id="id2">`Video Link &lt;&gt;`__</span></a></p></li>
+<li><p><strong>tl dr:</strong></p></li>
+</ul>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Looks at the question of “what to test” and “how to test”.
+This talk doesn’t have an opinion on language or test framework, but
+instead talks about how to write a test that isn’t just a reimplementation.</p>
+<p>The talk begins with a talk about when unit testing is useful, and some dismissive
+comments about mocking out systems.
+The talk focuses on unit testing for items where you don’t have to mock out.</p>
+<p>Kelvin does a “deep dive” on testing whether a given year is a leap year.</p>
+<section id="the-leap-year-problem">
+<h3>The Leap Year Problem<a class="headerlink" href="#the-leap-year-problem" title="Permalink to this headline">¶</a></h3>
+<p>The leap year problem is to test a function <code class="code docutils literal notranslate"><span class="pre">is_leap_year(yr)</span></code>.</p>
+<p>The question is how do we test this code? How should we write the tests for this code,
+that doesn’t end up just reimplementing the function?</p>
+<p>The specification of whether a year is a leap year are:</p>
+<ul class="simple">
+<li><p>Any year divisible by 400 is a leap year</p></li>
+<li><p>Any year divisible by 4, but is not divisible by 100, is a leap year</p></li>
+<li><p>Any other year is not a leap year</p></li>
+</ul>
+<p>We know that the year 2000 is a leap year (and passes the naive test), but the year 1900 is NOT a leap year.</p>
+<p>Kevlin advocates that the tests should be along the lines of</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is the most common case, so start here</span>
+<span class="n">test_years_not_divisible_by_4_are_not_leap_years</span>
+
+<span class="c1"># Next most common, and what many peope are familiar with</span>
+<span class="n">test_years_divisible_by_4_but_not_100_are_leap_years</span>
+
+<span class="c1"># Now getting to the cases where people may not know -- many of us have not lived in</span>
+<span class="c1"># a year where this would come up (1900 and 2100 are the two closest)</span>
+<span class="n">test_years_divisibile_by_100_but_not_400_are_not_leap_years</span>
+
+<span class="c1"># final test</span>
+<span class="n">test_years_divisible_by_400_are_leap_years</span>
+</pre></div>
+</div>
+<p>The argument is that if the tests fail, then this indicates exactly what the problem in your code is.
+It is also a good way of setting up tests in a way that makes sense for hypothesis test generation.</p>
+</section>
+<section id="stack">
+<h3>Stack<a class="headerlink" href="#stack" title="Permalink to this headline">¶</a></h3>
+<p>It was difficult to take notes for this section, as Kevlin uses Stacks in a lot of his talks.
+This wasn’t as interesting as some of his other talks including stacks.
+One of my favorites was the <a class="reference external" href="https://www.youtube.com/watch?v=APUCMSPiNh4">immutability talk</a>,
+which shows how to make a persistent data structure with immutability.</p>
+<p>The main view on Stacks were:</p>
+<ul class="simple">
+<li><p>try to specify the pre-conditions and post-conditions
+- e.g. when pushing onto an empty stack, the stack should have a depth of 1 and the top element should be the thing just pushed</p></li>
+<li><p>avoid tests that simply construct the stack, or that check that an empty stack with something pushed is non-empty. Be specific.</p></li>
+</ul>
+<p>There were a lot of observations that an empty stack is “different” from a non-empty stack:</p>
+<table class="table">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 32%" />
+<col style="width: 41%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Operation</p></td>
+<td><p>Empty stack</p></td>
+<td><p>Non-empty stack</p></td>
+</tr>
+<tr class="row-even"><td><p>push
+pop
+top
+depth</p></td>
+<td><p>OK
+ERR
+ERR
+OK (0)</p></td>
+<td><p>OK
+OK
+OK
+OK</p></td>
+</tr>
+</tbody>
+</table>
+<p>In <em>implementation</em>, Kevlin prefers to have <em>EmptyStack</em> and <em>NonEmptyStack</em> as different subclasses of <em>Stack</em>.
+It isn’t clear that this implementation detail should affect testing.
+However, he argues in this talk that the behavior of empty and non-empty stacks are different enough that the tests should be grouped
+in terms of tests for empty stacks and non-empty stacks separately.
+There is also some talk about full stacks.</p>
+</section>
+<section id="other-comments">
+<h3>Other comments<a class="headerlink" href="#other-comments" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>TDD should not just check the code works, they should also act as documentation (Pryce and Freeman, <em>Are your tests really driving development?</em>)
+* Kevlin suggests using examples in tests that communicate intent. e.g.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Using <code class="code docutils literal notranslate"><span class="pre">assert</span> <span class="pre">is_leap_year(1998)==False</span></code> is better than <cite>assert is_leap_year(42)==False</cite> because people will look at <cite>1998</cite> and will be a year (42 doesn’t immediately screm year)</p></li>
+<li><p>Using a name as “foo” or “bar” is not great, a name that is recognized as a name (e.g. “Andrew”) is better. It also can communicate assumptions about case.</p></li>
+<li><p>Note that this is the opposite of what hypothesis will do, which is to generate gibberish that a human generally wouldn’t think of</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Can have tests that could be included in more general parameterized tests, but can emphasize that you have considered them.
+* Example from the leap year example was one test that explicitly tests the years 1 - 10,000; a second test that tests years -1 to -10,000; a third test that tests year 0.</p>
+<blockquote>
+<div><p>It isn’t clear that year 0 exists (depends on the calendar), but by having a separate test we can emphasize that it has been thought of and the issue hasn’t been overlooked,
+which would not be the case if we tested from year -10,000 to 10,000.</p>
+</div></blockquote>
+</li>
+<li><p>Can make tests of the form <strong>Given …. WHEN …. THEN…..</strong>. Try to get as close to the preconditions and postconditions as possile.
+* Can also be thought of ensure preconditions, and assert postconditions
+* Can be used to show users how the code is set up.
+* Can be used to group tests:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Common pre-conditions (GIVEN): use the same fixtures</p></li>
+<li><p>Common post-conditions (THEN): can choose to order the tests by THEN (in code) to help communicate to reader how outcomes can occur
+* e.g. in leap year code, could have tests that return True first; then those that return False
+* e.g. in stack code, could have tests that throw errors first; then those that return results</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="code_refactoring_code_smells.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Code Refactoring: Learn Code Smells</p>
+        </div>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2020, Damien Martin.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

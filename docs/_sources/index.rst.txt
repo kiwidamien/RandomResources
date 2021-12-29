@@ -47,6 +47,13 @@ Welcome to RandomResources's documentation!
    content/card_problem
    content/resume
 
+.. toctree::
+   :maxdepth: 2
+   :caption: software development resources
+   :glob:
+
+   content/software_dev/*
+
 Indices and tables
 ==================
 
