@@ -44,11 +44,14 @@ Welcome to RandomResources's documentation!
    content/prob_prog/*
 
 .. toctree::
+   :maxdepth: 1
+   :caption: Scratch work
+
    content/card_problem
    content/resume
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: software development resources
    :glob:
 
