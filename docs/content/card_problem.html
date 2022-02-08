@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Card Problem &#8212; RandomResources  documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -142,6 +141,54 @@
  </a>
 </li>
 
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="software_dev/beyond_unit_tests.html">
+  Beyond Unit Tests
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="software_dev/class_development_toolkit.html">
+  Class Development Toolkit
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="software_dev/code_refactoring_code_smells.html">
+  Code Refactoring: Learn Code Smells
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="software_dev/ester_nam_empathy.html">
+  Empathy: One Weird Trick to Becoming a Better Software Developer
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="software_dev/how_to_write_functions.html">
+  HOWTO Write a Function
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="software_dev/stop_writing_classes.html">
+  Stop Writing Classes!
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="software_dev/structure_and_interpretation_of_test_cases.html">
+  Structure and Interpretation of Test Cases
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="software_dev/tests_for_legacy_code.html">
+  “What is this mess?” aka Writing tests of pre-existing code bases
+ </a>
+</li>
+
     
 </ul>
       </div>
@@ -167,12 +214,16 @@
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
             <div class="col-12 col-md-3 bd-sidebar">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="prob_prog/resources.html"
-                        title="previous chapter">Probabilitic Programming resources</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="resume.html"
-                        title="next chapter">Resume</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="prob_prog/resources.html"
+                          title="previous chapter">Probabilitic Programming resources</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="resume.html"
+                          title="next chapter">Resume</a></p>
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
@@ -242,14 +293,14 @@
               
               <div>
                 
-  <section id="card-problem">
+  <div class="section" id="card-problem">
 <h1>Card Problem<a class="headerlink" href="#card-problem" title="Permalink to this headline">¶</a></h1>
-<section id="question">
+<div class="section" id="question">
 <h2>Question<a class="headerlink" href="#question" title="Permalink to this headline">¶</a></h2>
 <p>There are 484 cards, and I get a random distribution of 912 cards (with replacement).
 What is the probability that I have at least one example of each?</p>
-</section>
-<section id="answer">
+</div>
+<div class="section" id="answer">
 <h2>Answer<a class="headerlink" href="#answer" title="Permalink to this headline">¶</a></h2>
 <p>We can select 912 cards in 484^912 different ways.</p>
 <p>We need to pick each of the 484 cards once, then for the remaining
@@ -262,7 +313,7 @@ the chance is</p>
 <p>Number of arrangements of 484 places amongst 912: 912!/(912-484)! = 912!/428!</p>
 <p>The probability of picking each card exactly once is</p>
 <p>(912!/428!) x (1/484^484) = (tiny)</p>
-<section id="use-the-log">
+<div class="section" id="use-the-log">
 <h3>Use the log<a class="headerlink" href="#use-the-log" title="Permalink to this headline">¶</a></h3>
 <p>We have
 .. code:</p>
@@ -276,12 +327,12 @@ the chance is</p>
  <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="n">log_of_desired</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="program-for-getting-number">
+</div>
+</div>
+<div class="section" id="program-for-getting-number">
 <h2>Program for getting number<a class="headerlink" href="#program-for-getting-number" title="Permalink to this headline">¶</a></h2>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
@@ -323,7 +374,7 @@ the chance is</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     

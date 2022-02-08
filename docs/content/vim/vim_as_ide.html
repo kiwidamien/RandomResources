@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vim as IDE &#8212; RandomResources  documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
@@ -142,6 +141,54 @@
  </a>
 </li>
 
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/beyond_unit_tests.html">
+  Beyond Unit Tests
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/class_development_toolkit.html">
+  Class Development Toolkit
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/code_refactoring_code_smells.html">
+  Code Refactoring: Learn Code Smells
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/ester_nam_empathy.html">
+  Empathy: One Weird Trick to Becoming a Better Software Developer
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/how_to_write_functions.html">
+  HOWTO Write a Function
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/stop_writing_classes.html">
+  Stop Writing Classes!
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/structure_and_interpretation_of_test_cases.html">
+  Structure and Interpretation of Test Cases
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/tests_for_legacy_code.html">
+  “What is this mess?” aka Writing tests of pre-existing code bases
+ </a>
+</li>
+
     
 </ul>
       </div>
@@ -167,12 +214,16 @@
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
             <div class="col-12 col-md-3 bd-sidebar">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="vim_and_window_management.html"
-                        title="previous chapter">Using tmux and vim together</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="vimrc.html"
-                        title="next chapter">Vimrc settings</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="vim_and_window_management.html"
+                          title="previous chapter">Using tmux and vim together</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="vimrc.html"
+                          title="next chapter">Vimrc settings</a></p>
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
@@ -274,24 +325,24 @@
               
               <div>
                 
-  <section id="vim-as-ide">
+  <div class="section" id="vim-as-ide">
 <h1>Vim as IDE<a class="headerlink" href="#vim-as-ide" title="Permalink to this headline">¶</a></h1>
-<section id="references">
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=E-ZbrtoSuzw">Vim: tutorial on Editing, Navigation, and File Management (2018)</a></p></li>
 </ul>
-</section>
-<section id="operators-and-motion">
+</div>
+<div class="section" id="operators-and-motion">
 <h2>Operators and Motion<a class="headerlink" href="#operators-and-motion" title="Permalink to this headline">¶</a></h2>
-<section id="operators">
+<div class="section" id="operators">
 <h3>Operators:<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Verbs of the VI language</p></li>
 <li><p>Act on text objects</p></li>
 </ul>
-</section>
-<section id="motions">
+</div>
+<div class="section" id="motions">
 <h3>Motions<a class="headerlink" href="#motions" title="Permalink to this headline">¶</a></h3>
 <table class="table">
 <colgroup>
@@ -349,15 +400,15 @@ Navigation at warp speed + tags</p>
 <li><p>Windows for buffer viewports</p></li>
 <li><p>Buffers for file proxies</p></li>
 </ul>
-</section>
-</section>
-<section id="buffers">
+</div>
+</div>
+<div class="section" id="buffers">
 <h2>Buffers<a class="headerlink" href="#buffers" title="Permalink to this headline">¶</a></h2>
 <p>Buffers represent file proxies.
 There is a buffer for every file visited in your VIM session.</p>
 <p>Argument list are the files you opened vim with</p>
-</section>
-<section id="windows">
+</div>
+<div class="section" id="windows">
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <p>Windows are NOT a mapping to files (those are buffers).
 Can have multiple windows on the same file! (e.g. different areas of the file).</p>
@@ -374,7 +425,7 @@ Can have multiple windows on the same file! (e.g. different areas of the file).<
 </tr>
 </tbody>
 </table>
-<section id="window-commands">
+<div class="section" id="window-commands">
 <h3>Window commands<a class="headerlink" href="#window-commands" title="Permalink to this headline">¶</a></h3>
 <table class="table">
 <colgroup>
@@ -410,20 +461,20 @@ Can have multiple windows on the same file! (e.g. different areas of the file).<
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="tabs">
+</div>
+</div>
+<div class="section" id="tabs">
 <h2>Tabs<a class="headerlink" href="#tabs" title="Permalink to this headline">¶</a></h2>
 <p>gt go to next tab
 gT</p>
-</section>
-<section id="persistent-session-management-using-tmux">
+</div>
+<div class="section" id="persistent-session-management-using-tmux">
 <h2>Persistent session management using tmux<a class="headerlink" href="#persistent-session-management-using-tmux" title="Permalink to this headline">¶</a></h2>
-</section>
-<section id="efficient-workflow-navigation">
+</div>
+<div class="section" id="efficient-workflow-navigation">
 <h2>Efficient workflow navigation<a class="headerlink" href="#efficient-workflow-navigation" title="Permalink to this headline">¶</a></h2>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
@@ -465,7 +516,7 @@ gT</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     

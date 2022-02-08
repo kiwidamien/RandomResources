@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Using tmux and vim together &#8212; RandomResources  documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
@@ -142,6 +141,54 @@
  </a>
 </li>
 
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/beyond_unit_tests.html">
+  Beyond Unit Tests
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/class_development_toolkit.html">
+  Class Development Toolkit
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/code_refactoring_code_smells.html">
+  Code Refactoring: Learn Code Smells
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/ester_nam_empathy.html">
+  Empathy: One Weird Trick to Becoming a Better Software Developer
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/how_to_write_functions.html">
+  HOWTO Write a Function
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/stop_writing_classes.html">
+  Stop Writing Classes!
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/structure_and_interpretation_of_test_cases.html">
+  Structure and Interpretation of Test Cases
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/tests_for_legacy_code.html">
+  “What is this mess?” aka Writing tests of pre-existing code bases
+ </a>
+</li>
+
     
 </ul>
       </div>
@@ -167,12 +214,16 @@
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
             <div class="col-12 col-md-3 bd-sidebar">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="tmux_shortcuts.html"
-                        title="previous chapter">tmux shortcuts</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="vim_as_ide.html"
-                        title="next chapter">Vim as IDE</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="tmux_shortcuts.html"
+                          title="previous chapter">tmux shortcuts</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="vim_as_ide.html"
+                          title="next chapter">Vim as IDE</a></p>
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
@@ -257,10 +308,10 @@
               
               <div>
                 
-  <section id="using-tmux-and-vim-together">
+  <div class="section" id="using-tmux-and-vim-together">
 <h1>Using tmux and vim together<a class="headerlink" href="#using-tmux-and-vim-together" title="Permalink to this headline">¶</a></h1>
 <p>Reference: [Using tmux sessions, windows, panes, and Vim Buffers together](<a class="reference external" href="https://www.youtube.com/watch?v=hbs7tuwpgZA">https://www.youtube.com/watch?v=hbs7tuwpgZA</a>)</p>
-<section id="points-of-confusion">
+<div class="section" id="points-of-confusion">
 <h2>Points of confusion<a class="headerlink" href="#points-of-confusion" title="Permalink to this headline">¶</a></h2>
 <p>Vim windows are views on a buffer, vim tabs contain windows. The same buffer might be viewed in different tabs, but
 each window (view) is contained in exactly one tab. i.e. tabs are similar to tabs in firefox.</p>
@@ -270,8 +321,8 @@ each window (view) is contained in exactly one tab. i.e. tabs are similar to tab
 <li><p>windows in tmux are like tabs in chrome or vim</p></li>
 <li><p>panes in tmux break a “window” into different sections (i.e. they are like windows in vim)</p></li>
 </ul>
-</section>
-<section id="workspace-recommendations">
+</div>
+<div class="section" id="workspace-recommendations">
 <h2>Workspace recommendations<a class="headerlink" href="#workspace-recommendations" title="Permalink to this headline">¶</a></h2>
 <p>Suppose you have three projects:</p>
 <ol class="arabic simple">
@@ -299,23 +350,23 @@ doing version control stuff as well.
 We keep editing away from version control because we only interact with VC once we have decided the
 code is in a good place (i.e. VC interaction occurs in “gaps” in the editing process).</p>
 <p>We would have three TMUX windows (tabs to everyone else) in this session.</p>
-<section id="editing-window">
+<div class="section" id="editing-window">
 <h3>Editing “window”<a class="headerlink" href="#editing-window" title="Permalink to this headline">¶</a></h3>
 <p>This would probably be a single pane, running a single vim session.
 More on this below.</p>
-</section>
-<section id="serving-logging-window">
+</div>
+<div class="section" id="serving-logging-window">
 <h3>Serving / logging “window”<a class="headerlink" href="#serving-logging-window" title="Permalink to this headline">¶</a></h3>
 <p>The npm server doesn’t do much, but can display useful error messages.
 It might be useful to split this window into two panes, one for the npm output (if there are errors)
 and the other to the database connection (to quickly see if empty database errors are really errors)</p>
-</section>
-<section id="version-control-and-deploying-window">
+</div>
+<div class="section" id="version-control-and-deploying-window">
 <h3>Version control and deploying window<a class="headerlink" href="#version-control-and-deploying-window" title="Permalink to this headline">¶</a></h3>
 <p>Presumably we run our testing module before pushing. So maybe a testing pane, a git pane, and a deploy pane.</p>
-</section>
-</section>
-<section id="editing-window-recommendations">
+</div>
+</div>
+<div class="section" id="editing-window-recommendations">
 <h2>Editing window recommendations<a class="headerlink" href="#editing-window-recommendations" title="Permalink to this headline">¶</a></h2>
 <p>Within vim, create several tabs for files (technically windows) that you would want to look at together.</p>
 <p>For example,</p>
@@ -325,8 +376,8 @@ and the other to the database connection (to quickly see if empty database error
 <li><p>You might have <cite>complexMetaData.yaml</cite> that is really long, and you want to look at multiple places at once.
 You  could have multple windows/panes in different parts of this file.</p></li>
 </ol>
-</section>
-<section id="overall-project">
+</div>
+<div class="section" id="overall-project">
 <h2>Overall project<a class="headerlink" href="#overall-project" title="Permalink to this headline">¶</a></h2>
 <p>So we might have</p>
 <ul>
@@ -371,8 +422,8 @@ You  could have multple windows/panes in different parts of this file.</p></li>
 </ul>
 </li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
@@ -414,7 +465,7 @@ You  could have multple windows/panes in different parts of this file.</p></li>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     

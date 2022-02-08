@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Structure and Interpretation of Test Cases &#8212; RandomResources  documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
@@ -34,7 +33,8 @@
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Code Refactoring: Learn Code Smells" href="code_refactoring_code_smells.html" />
+    <link rel="next" title="“What is this mess?” aka Writing tests of pre-existing code bases" href="tests_for_legacy_code.html" />
+    <link rel="prev" title="Stop Writing Classes!" href="stop_writing_classes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -142,14 +142,50 @@
 </li>
 
 <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="beyond_unit_tests.html">
+  Beyond Unit Tests
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="class_development_toolkit.html">
+  Class Development Toolkit
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="code_refactoring_code_smells.html">
   Code Refactoring: Learn Code Smells
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="ester_nam_empathy.html">
+  Empathy: One Weird Trick to Becoming a Better Software Developer
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="how_to_write_functions.html">
+  HOWTO Write a Function
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="stop_writing_classes.html">
+  Stop Writing Classes!
  </a>
 </li>
 
 <li class="toctree-l1 current active nav-item">
  <a class="current reference internal nav-link" href="#">
   Structure and Interpretation of Test Cases
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="tests_for_legacy_code.html">
+  “What is this mess?” aka Writing tests of pre-existing code bases
  </a>
 </li>
 
@@ -178,9 +214,16 @@
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
             <div class="col-12 col-md-3 bd-sidebar">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="code_refactoring_code_smells.html"
-                        title="previous chapter">Code Refactoring: Learn Code Smells</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="stop_writing_classes.html"
+                          title="previous chapter">Stop Writing Classes!</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="tests_for_legacy_code.html"
+                          title="next chapter">“What is this mess?” aka Writing tests of pre-existing code bases</a></p>
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
@@ -250,14 +293,14 @@
               
               <div>
                 
-  <section id="structure-and-interpretation-of-test-cases">
+  <div class="section" id="structure-and-interpretation-of-test-cases">
 <h1>Structure and Interpretation of Test Cases<a class="headerlink" href="#structure-and-interpretation-of-test-cases" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=APUCMSPiNh4">Video Link</a></p></li>
 <li><p>Speaker: Kevlin Henney</p></li>
 <li><p>Rating: 2/5</p></li>
 </ul>
-<section id="overview">
+<div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>Looks at the question of “what to test” and “how to test”.
 This talk doesn’t have an opinion on language or test framework, but
@@ -266,7 +309,7 @@ instead talks about how to write a test that isn’t just a reimplementation.</p
 comments about mocking out systems.
 The talk focuses on unit testing for items where you don’t have to mock out.</p>
 <p>Kelvin does a “deep dive” on testing whether a given year is a leap year.</p>
-<section id="the-leap-year-problem">
+<div class="section" id="the-leap-year-problem">
 <h3>The Leap Year Problem<a class="headerlink" href="#the-leap-year-problem" title="Permalink to this headline">¶</a></h3>
 <p>The leap year problem is to test a function <code class="code docutils literal notranslate"><span class="pre">is_leap_year(yr)</span></code>.</p>
 <p>The question is how do we test this code? How should we write the tests for this code,
@@ -295,8 +338,8 @@ that doesn’t end up just reimplementing the function?</p>
 </div>
 <p>The argument is that if the tests fail, then this indicates exactly what the problem in your code is.
 It is also a good way of setting up tests in a way that makes sense for hypothesis test generation.</p>
-</section>
-<section id="stack">
+</div>
+<div class="section" id="stack">
 <h3>Stack<a class="headerlink" href="#stack" title="Permalink to this headline">¶</a></h3>
 <p>It was difficult to take notes for this section, as Kevlin uses Stacks in a lot of his talks.
 This wasn’t as interesting as some of his other talks including stacks.
@@ -340,8 +383,8 @@ It isn’t clear that this implementation detail should affect testing.
 However, he argues in this talk that the behavior of empty and non-empty stacks are different enough that the tests should be grouped
 in terms of tests for empty stacks and non-empty stacks separately.
 There is also some talk about full stacks.</p>
-</section>
-<section id="other-comments">
+</div>
+<div class="section" id="other-comments">
 <h3>Other comments<a class="headerlink" href="#other-comments" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>TDD should not just check the code works, they should also act as documentation (Pryce and Freeman, <em>Are your tests really driving development?</em>)
@@ -375,9 +418,9 @@ which would not be the case if we tested from year -10,000 to 10,000.</p>
 </div></blockquote>
 </li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>
@@ -385,12 +428,19 @@ which would not be the case if we tested from year -10,000 to 10,000.</p>
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="code_refactoring_code_smells.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="stop_writing_classes.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Code Refactoring: Learn Code Smells</p>
+            <p class="prev-next-title">Stop Writing Classes!</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="tests_for_legacy_code.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">“What is this mess?” aka Writing tests of pre-existing code bases</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
               
@@ -412,7 +462,7 @@ which would not be the case if we tested from year -10,000 to 10,000.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     
