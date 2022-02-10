@@ -31,4 +31,3 @@ Rough list of places to see
    * - Sky Lagoon
      - Oskar Holm
      - Cool pool experience
-   * -
