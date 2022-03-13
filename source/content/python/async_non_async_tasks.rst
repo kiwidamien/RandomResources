@@ -49,3 +49,120 @@ Here is a block of Python code that will work for you (3.5+)
   loop.run_until_complete(main())
 
 The basic trick is to use :code:`run_in_executor`.
+
+Note that we are using :code:`requests.get` in two separate calls. 
+This is subtle, so let's dig in a little bit more.
+
+Digging in method 2
+===================
+
+Sync version
+************
+
+Let's start with a simple syncronous version, where we use an API to
+get data about ISBNs for a book
+
+.. code::python
+
+  import requests
+
+  def print_book_info(index: int, isbn: str):
+    url = "https://www.googleapis.com/books/v1/volumes"
+    response = requests.get(f"{url}?q=isbn:{isbn}").json()
+    title = response["items"][0]["volumeInfo"]["title"]
+    print(f"{index}: {title}")
+
+Note this is a *syncronous* function.
+
+We can get the syncronous version as
+
+.. code:: python
+
+  ...
+
+  def sync_main(isbns:List[str] =ISBNS):
+    for index, isbn in enumerate(isbns):
+      print_book_info(index, isbn)
+
+
+This works, but the data requests do not occur in parallel.
+
+
+Failed async version
+********************
+
+Let's try writing an async version of the main function, with
+the spoiler alert that it will not work particularly well!
+
+The code is 
+.. code:: python
+
+   async def async_main_long(isbns:List[str]=ISBNS):
+     for index, isbn in enumerate(isbns):
+       await print_book_info(index,isbn)
+
+This code is a little harder to execute in a script (in the REPL it is 
+just :code:`await async_main_long()`) but it doesn't take advantage of
+any of the async behavior.
+
+The reason is when we hit the "await" keyword, we are signaling to Python
+it is okay for some *other* task to take control. We only have the one
+task -- different iterations of the loop are all sequential behind each
+other.
+
+Result: We get the correct result, but it takes just as long as the
+syncronous version. If we tried running two copies of this function
+at once
+
+Failed async version 2
+**********************
+
+We might try having two tasks inside the loop at once:
+
+.. code:: python
+
+   async def async_main_multi_line_loop(isbns:List[str]=ISBNS):
+     for index in range(len(isbns),-1,2):
+       await print_book_info(index, isbns[index])
+       if index + 1 < len(isbns):
+         await print_book_info(index+1, isbns[index+1])
+
+This also fails to get the promised speedup from asyncio, as there is
+nothing to interput the :code:`await` statement. The code within the 
+loop literally waits at the :code:`await` until it returns. 
+
+What the :code:`await` does is allow another process to interrupt while
+awaiting.
+
+Successful async version
+************************
+
+Let's make each request it's own task, and then use :code:`asyncio.gather` to put all the tasks together.
+
+.. code:: python
+
+   async def async_main_sep_tasks(isbns:List[str]=ISBNS):
+     loop = asyncio.get_event_loop()
+     tasks = [
+       loop.run_in_executor(None, print_book_name, index, isbn)
+       for index, isbn in enumerate(isbns)
+     ]
+     await asyncio.gather(*tasks)
+
+This version does what we want -- each task is placed separately on the event loop, so the next one can stat while we are :code:`await`-ing the previous one.
+
+Seeing it altogether
+********************
+
+Let's put the entire example together in one script to play with
+
+.. literalinclude:: isbn.py      
+
+The results of this code block are
+
+.. code:: python
+
+   sync_main                      took 7.406 seconds
+   async_main_long                took 7.399 seconds
+   async_main_multi_line_loop     took 7.038 seconds
+   async_main_sep_tasks           took 0.690 seconds
