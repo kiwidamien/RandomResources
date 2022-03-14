@@ -62,27 +62,15 @@ Sync version
 Let's start with a simple syncronous version, where we use an API to
 get data about ISBNs for a book
 
-.. code::python
-
-  import requests
-
-  def print_book_info(index: int, isbn: str):
-    url = "https://www.googleapis.com/books/v1/volumes"
-    response = requests.get(f"{url}?q=isbn:{isbn}").json()
-    title = response["items"][0]["volumeInfo"]["title"]
-    print(f"{index}: {title}")
+.. literalinclude:: isbn.py
+  :pyobject: print_book_info
 
 Note this is a *syncronous* function.
 
 We can get the syncronous version as
 
-.. code:: python
-
-  ...
-
-  def sync_main(isbns:List[str] =ISBNS):
-    for index, isbn in enumerate(isbns):
-      print_book_info(index, isbn)
+.. literalinclude:: isbn.py
+  :pyobject: sync_main
 
 
 This works, but the data requests do not occur in parallel.
@@ -95,11 +83,10 @@ Let's try writing an async version of the main function, with
 the spoiler alert that it will not work particularly well!
 
 The code is 
-.. code:: python
 
-   async def async_main_long(isbns:List[str]=ISBNS):
-     for index, isbn in enumerate(isbns):
-       await print_book_info(index,isbn)
+.. literalinclude:: isbn.py
+  :pyobject: async_main_long
+
 
 This code is a little harder to execute in a script (in the REPL it is 
 just :code:`await async_main_long()`) but it doesn't take advantage of
@@ -119,13 +106,8 @@ Failed async version 2
 
 We might try having two tasks inside the loop at once:
 
-.. code:: python
-
-   async def async_main_multi_line_loop(isbns:List[str]=ISBNS):
-     for index in range(len(isbns),-1,2):
-       await print_book_info(index, isbns[index])
-       if index + 1 < len(isbns):
-         await print_book_info(index+1, isbns[index+1])
+.. literalinclude:: isbn.py
+  :pyobject: async_main_multi_line
 
 This also fails to get the promised speedup from asyncio, as there is
 nothing to interput the :code:`await` statement. The code within the 
@@ -139,15 +121,9 @@ Successful async version
 
 Let's make each request it's own task, and then use :code:`asyncio.gather` to put all the tasks together.
 
-.. code:: python
+.. literalinclude:: isbn.py
+  :pyobject: async_main_sep_tasks
 
-   async def async_main_sep_tasks(isbns:List[str]=ISBNS):
-     loop = asyncio.get_event_loop()
-     tasks = [
-       loop.run_in_executor(None, print_book_name, index, isbn)
-       for index, isbn in enumerate(isbns)
-     ]
-     await asyncio.gather(*tasks)
 
 This version does what we want -- each task is placed separately on the event loop, so the next one can stat while we are :code:`await`-ing the previous one.
 

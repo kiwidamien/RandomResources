@@ -349,29 +349,33 @@ This is subtle, so let’s dig in a little bit more.</p>
 <h1>Digging in method 2<a class="headerlink" href="#digging-in-method-2" title="Permalink to this headline">¶</a></h1>
 <p>Let’s start with a simple syncronous version, where we use an API to
 get data about ISBNs for a book</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_book_info</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">isbn</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Our example of a syncronous request we want to parallelize&quot;&quot;&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.googleapis.com/books/v1/volumes&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">?q=isbn:</span><span class="si">{</span><span class="n">isbn</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;items&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;volumeInfo&quot;</span><span class="p">][</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>Note this is a <em>syncronous</em> function.</p>
 <p>We can get the syncronous version as</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
-
-<span class="k">def</span> <span class="nf">sync_main</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span><span class="n">ISBNS</span><span class="p">):</span>
-  <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">isbns</span><span class="p">):</span>
-    <span class="n">print_book_info</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">isbn</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sync_main</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">ISBNS</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sync version for printing all isbns&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">isbns</span><span class="p">):</span>
+        <span class="n">print_book_info</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">isbn</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This works, but the data requests do not occur in parallel.</p>
 <p>Let’s try writing an async version of the main function, with
 the spoiler alert that it will not work particularly well!</p>
-<p>The code is
-.. code:: python</p>
-<blockquote>
-<div><dl class="simple">
-<dt>async def async_main_long(isbns:List[str]=ISBNS):</dt><dd><dl class="simple">
-<dt>for index, isbn in enumerate(isbns):</dt><dd><p>await print_book_info(index,isbn)</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</div></blockquote>
+<p>The code is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">async_main_long</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">ISBNS</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">isbns</span><span class="p">):</span>
+        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span>
+            <span class="kc">None</span><span class="p">,</span> <span class="n">print_book_info</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
 <p>This code is a little harder to execute in a script (in the REPL it is
 just <code class="code docutils literal notranslate"><span class="pre">await</span> <span class="pre">async_main_long()</span></code>) but it doesn’t take advantage of
 any of the async behavior.</p>
@@ -383,26 +387,19 @@ other.</p>
 syncronous version. If we tried running two copies of this function
 at once</p>
 <p>We might try having two tasks inside the loop at once:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">async_main_multi_line_loop</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="n">ISBNS</span><span class="p">):</span>
-  <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">isbns</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
-    <span class="k">await</span> <span class="n">print_book_info</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">isbns</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
-    <span class="k">if</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">isbns</span><span class="p">):</span>
-      <span class="k">await</span> <span class="n">print_book_info</span><span class="p">(</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">isbns</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
 <p>This also fails to get the promised speedup from asyncio, as there is
 nothing to interput the <code class="code docutils literal notranslate"><span class="pre">await</span></code> statement. The code within the
 loop literally waits at the <code class="code docutils literal notranslate"><span class="pre">await</span></code> until it returns.</p>
 <p>What the <code class="code docutils literal notranslate"><span class="pre">await</span></code> does is allow another process to interrupt while
 awaiting.</p>
 <p>Let’s make each request it’s own task, and then use <code class="code docutils literal notranslate"><span class="pre">asyncio.gather</span></code> to put all the tasks together.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">async_main_sep_tasks</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="n">ISBNS</span><span class="p">):</span>
-  <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-  <span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">print_book_name</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">isbns</span><span class="p">)</span>
-  <span class="p">]</span>
-  <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">async_main_sep_tasks</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">ISBNS</span><span class="p">):</span>
+    <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">print_book_info</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">isbns</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This version does what we want – each task is placed separately on the event loop, so the next one can stat while we are <code class="code docutils literal notranslate"><span class="pre">await</span></code>-ing the previous one.</p>
@@ -414,96 +411,102 @@ awaiting.</p>
 
 
 <span class="n">ISBNS</span> <span class="o">=</span> <span class="p">[</span>
-<span class="mi">9780007355143</span><span class="p">,</span>
- <span class="mi">9780008108298</span><span class="p">,</span>
- <span class="mi">9780547249643</span><span class="p">,</span>
- <span class="mi">9781405882583</span><span class="p">,</span>
- <span class="mi">9780316095860</span><span class="p">,</span>
- <span class="mi">9780930289232</span><span class="p">,</span>
- <span class="mi">9780486415871</span><span class="p">,</span>
- <span class="mi">9780765350381</span><span class="p">,</span>
- <span class="mi">9789898559425</span><span class="p">,</span>
- <span class="mi">9781944529024</span><span class="p">,</span>
- <span class="mi">9780765376671</span><span class="p">,</span>
- <span class="mi">9781400079988</span><span class="p">,</span>
- <span class="mi">9781438114026</span><span class="p">,</span>
- <span class="mi">9780393066258</span>
+    <span class="mi">9780007355143</span><span class="p">,</span>
+    <span class="mi">9780008108298</span><span class="p">,</span>
+    <span class="mi">9780547249643</span><span class="p">,</span>
+    <span class="mi">9781405882583</span><span class="p">,</span>
+    <span class="mi">9780316095860</span><span class="p">,</span>
+    <span class="mi">9780930289232</span><span class="p">,</span>
+    <span class="mi">9780486415871</span><span class="p">,</span>
+    <span class="mi">9780765350381</span><span class="p">,</span>
+    <span class="mi">9789898559425</span><span class="p">,</span>
+    <span class="mi">9781944529024</span><span class="p">,</span>
+    <span class="mi">9780765376671</span><span class="p">,</span>
+    <span class="mi">9781400079988</span><span class="p">,</span>
+    <span class="mi">9781438114026</span><span class="p">,</span>
+    <span class="mi">9780393066258</span><span class="p">,</span>
 <span class="p">]</span>
 
 
 <span class="k">def</span> <span class="nf">print_book_info</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">isbn</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Our example of a syncronous request we want to parallelize&quot;&quot;&quot;</span>
-  <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.googleapis.com/books/v1/volumes&quot;</span>
-  <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">?q=isbn:</span><span class="si">{</span><span class="n">isbn</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-  <span class="n">title</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;items&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;volumeInfo&#39;</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
-  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="sd">&quot;&quot;&quot;Our example of a syncronous request we want to parallelize&quot;&quot;&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.googleapis.com/books/v1/volumes&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">?q=isbn:</span><span class="si">{</span><span class="n">isbn</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;items&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;volumeInfo&quot;</span><span class="p">][</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">sync_main</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="n">ISBNS</span><span class="p">):</span>
-   <span class="sd">&quot;&quot;&quot;Sync version for printing all isbns&quot;&quot;&quot;</span>
-   <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">isbns</span><span class="p">):</span>
-     <span class="n">print_book_info</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">isbn</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">sync_main</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">ISBNS</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sync version for printing all isbns&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">isbns</span><span class="p">):</span>
+        <span class="n">print_book_info</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">isbn</span><span class="p">)</span>
 
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">async_main_long</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="n">ISBNS</span><span class="p">):</span>
-  <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">isbns</span><span class="p">):</span>
-    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">print_book_info</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">async_main_long</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">ISBNS</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">isbns</span><span class="p">):</span>
+        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span>
+            <span class="kc">None</span><span class="p">,</span> <span class="n">print_book_info</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span>
+        <span class="p">)</span>
 
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">async_main_multi_line_loop</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="n">ISBNS</span><span class="p">):</span>
-  <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">isbns</span><span class="p">),</span> <span class="mi">2</span><span class="p">):</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">async_main_multi_line_loop</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">ISBNS</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">isbns</span><span class="p">),</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+        <span class="k">await</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">print_book_info</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbns</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">isbns</span><span class="p">):</span>
+            <span class="k">await</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span>
+                <span class="kc">None</span><span class="p">,</span> <span class="n">print_book_info</span><span class="p">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">isbns</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="p">)</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">async_main_sep_tasks</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">ISBNS</span><span class="p">):</span>
     <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-    <span class="k">await</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">print_book_info</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbns</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
-    <span class="k">if</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">isbns</span><span class="p">):</span>
-      <span class="k">await</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">print_book_info</span><span class="p">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">isbns</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
-
-
-<span class="k">async</span> <span class="k">def</span> <span class="nf">async_main_sep_tasks</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="n">ISBNS</span><span class="p">):</span>
-  <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-  <span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">print_book_info</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">isbns</span><span class="p">)</span>
-  <span class="p">]</span>
-  <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">print_book_info</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">isbns</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
 
 
 <span class="c1"># ------------------</span>
 
+
 <span class="k">def</span> <span class="nf">time_sync</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Time calls for parameterless syncronous functions&quot;&quot;&quot;</span>
-  <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-  <span class="n">func</span><span class="p">()</span>
-  <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-  <span class="k">return</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>
+    <span class="sd">&quot;&quot;&quot;Time calls for parameterless syncronous functions&quot;&quot;&quot;</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">func</span><span class="p">()</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>
 
 
 <span class="k">def</span> <span class="nf">time_async</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-  <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-  <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-  <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">func</span><span class="p">())</span>
-  <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-  <span class="k">return</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>
+    <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">func</span><span class="p">())</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>
+
 
 <span class="c1"># ---------------------</span>
 
+
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-  <span class="n">funcs_to_time</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="n">sync_main</span><span class="p">,</span> <span class="s1">&#39;sync&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="n">async_main_long</span><span class="p">,</span> <span class="s1">&#39;async&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="n">async_main_multi_line_loop</span><span class="p">,</span> <span class="s1">&#39;async&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="n">async_main_sep_tasks</span><span class="p">,</span> <span class="s1">&#39;async&#39;</span><span class="p">)</span>
-  <span class="p">]</span>
-  <span class="n">timings</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">time_sync</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">if</span> <span class="n">ftype</span><span class="o">==</span><span class="s1">&#39;sync&#39;</span> <span class="k">else</span> <span class="n">time_async</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">ftype</span> <span class="ow">in</span> <span class="n">funcs_to_time</span>
-  <span class="p">]</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
-  <span class="k">for</span> <span class="p">((</span><span class="n">func</span><span class="p">,</span> <span class="n">_</span><span class="p">),</span> <span class="n">time_taken</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">funcs_to_time</span><span class="p">,</span> <span class="n">timings</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">:</span><span class="s2">30s</span><span class="si">}</span><span class="s2"> took </span><span class="si">{</span><span class="n">time_taken</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span> 
+    <span class="n">funcs_to_time</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">sync_main</span><span class="p">,</span> <span class="s2">&quot;sync&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">async_main_long</span><span class="p">,</span> <span class="s2">&quot;async&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">async_main_multi_line_loop</span><span class="p">,</span> <span class="s2">&quot;async&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">async_main_sep_tasks</span><span class="p">,</span> <span class="s2">&quot;async&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+    <span class="n">timings</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">time_sync</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">if</span> <span class="n">ftype</span> <span class="o">==</span> <span class="s2">&quot;sync&quot;</span> <span class="k">else</span> <span class="n">time_async</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">ftype</span> <span class="ow">in</span> <span class="n">funcs_to_time</span>
+    <span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">((</span><span class="n">func</span><span class="p">,</span> <span class="n">_</span><span class="p">),</span> <span class="n">time_taken</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">funcs_to_time</span><span class="p">,</span> <span class="n">timings</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">:</span><span class="s2">30s</span><span class="si">}</span><span class="s2"> took </span><span class="si">{</span><span class="n">time_taken</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
 
 
-<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-  <span class="n">main</span><span class="p">()</span> 
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>The results of this code block are</p>
