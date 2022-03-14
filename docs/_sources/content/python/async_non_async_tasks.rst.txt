@@ -57,7 +57,7 @@ Digging in method 2
 ===================
 
 Sync version
-************
+------------
 
 Let's start with a simple syncronous version, where we use an API to
 get data about ISBNs for a book
@@ -67,7 +67,7 @@ get data about ISBNs for a book
 
 Note this is a *syncronous* function.
 
-We can get the syncronous version as
+We can get the syncronous version of getting all the book information as
 
 .. literalinclude:: isbn.py
   :pyobject: sync_main
@@ -77,7 +77,7 @@ This works, but the data requests do not occur in parallel.
 
 
 Failed async version
-********************
+--------------------
 
 Let's try writing an async version of the main function, with
 the spoiler alert that it will not work particularly well!
@@ -102,12 +102,14 @@ syncronous version. If we tried running two copies of this function
 at once
 
 Failed async version 2
-**********************
+----------------------
+
 
 We might try having two tasks inside the loop at once:
 
 .. literalinclude:: isbn.py
-  :pyobject: async_main_multi_line
+  :pyobject: async_main_multi_line_loop
+
 
 This also fails to get the promised speedup from asyncio, as there is
 nothing to interput the :code:`await` statement. The code within the 
@@ -117,7 +119,7 @@ What the :code:`await` does is allow another process to interrupt while
 awaiting.
 
 Successful async version
-************************
+------------------------
 
 Let's make each request it's own task, and then use :code:`asyncio.gather` to put all the tasks together.
 
@@ -128,7 +130,7 @@ Let's make each request it's own task, and then use :code:`asyncio.gather` to pu
 This version does what we want -- each task is placed separately on the event loop, so the next one can stat while we are :code:`await`-ing the previous one.
 
 Seeing it altogether
-********************
+--------------------
 
 Let's put the entire example together in one script to play with
 

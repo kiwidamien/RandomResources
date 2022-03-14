@@ -291,6 +291,33 @@
   <a class="reference internal nav-link" href="#digging-in-method-2">
    Digging in method 2
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sync-version">
+     Sync version
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#failed-async-version">
+     Failed async version
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#failed-async-version-2">
+     Failed async version 2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#successful-async-version">
+     Successful async version
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seeing-it-altogether">
+     Seeing it altogether
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -347,6 +374,8 @@ This is subtle, so let’s dig in a little bit more.</p>
 </div>
 <div class="section" id="digging-in-method-2">
 <h1>Digging in method 2<a class="headerlink" href="#digging-in-method-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sync-version">
+<h2>Sync version<a class="headerlink" href="#sync-version" title="Permalink to this headline">¶</a></h2>
 <p>Let’s start with a simple syncronous version, where we use an API to
 get data about ISBNs for a book</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_book_info</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">isbn</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
@@ -358,7 +387,7 @@ get data about ISBNs for a book</p>
 </pre></div>
 </div>
 <p>Note this is a <em>syncronous</em> function.</p>
-<p>We can get the syncronous version as</p>
+<p>We can get the syncronous version of getting all the book information as</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sync_main</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">ISBNS</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Sync version for printing all isbns&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbn</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">isbns</span><span class="p">):</span>
@@ -366,6 +395,9 @@ get data about ISBNs for a book</p>
 </pre></div>
 </div>
 <p>This works, but the data requests do not occur in parallel.</p>
+</div>
+<div class="section" id="failed-async-version">
+<h2>Failed async version<a class="headerlink" href="#failed-async-version" title="Permalink to this headline">¶</a></h2>
 <p>Let’s try writing an async version of the main function, with
 the spoiler alert that it will not work particularly well!</p>
 <p>The code is</p>
@@ -386,12 +418,28 @@ other.</p>
 <p>Result: We get the correct result, but it takes just as long as the
 syncronous version. If we tried running two copies of this function
 at once</p>
+</div>
+<div class="section" id="failed-async-version-2">
+<h2>Failed async version 2<a class="headerlink" href="#failed-async-version-2" title="Permalink to this headline">¶</a></h2>
 <p>We might try having two tasks inside the loop at once:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">async_main_multi_line_loop</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">ISBNS</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">isbns</span><span class="p">),</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+        <span class="k">await</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">print_book_info</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">isbns</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">isbns</span><span class="p">):</span>
+            <span class="k">await</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span>
+                <span class="kc">None</span><span class="p">,</span> <span class="n">print_book_info</span><span class="p">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">isbns</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="p">)</span>
+</pre></div>
+</div>
 <p>This also fails to get the promised speedup from asyncio, as there is
 nothing to interput the <code class="code docutils literal notranslate"><span class="pre">await</span></code> statement. The code within the
 loop literally waits at the <code class="code docutils literal notranslate"><span class="pre">await</span></code> until it returns.</p>
 <p>What the <code class="code docutils literal notranslate"><span class="pre">await</span></code> does is allow another process to interrupt while
 awaiting.</p>
+</div>
+<div class="section" id="successful-async-version">
+<h2>Successful async version<a class="headerlink" href="#successful-async-version" title="Permalink to this headline">¶</a></h2>
 <p>Let’s make each request it’s own task, and then use <code class="code docutils literal notranslate"><span class="pre">asyncio.gather</span></code> to put all the tasks together.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">async_main_sep_tasks</span><span class="p">(</span><span class="n">isbns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">ISBNS</span><span class="p">):</span>
     <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
@@ -403,6 +451,9 @@ awaiting.</p>
 </pre></div>
 </div>
 <p>This version does what we want – each task is placed separately on the event loop, so the next one can stat while we are <code class="code docutils literal notranslate"><span class="pre">await</span></code>-ing the previous one.</p>
+</div>
+<div class="section" id="seeing-it-altogether">
+<h2>Seeing it altogether<a class="headerlink" href="#seeing-it-altogether" title="Permalink to this headline">¶</a></h2>
 <p>Let’s put the entire example together in one script to play with</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
@@ -515,6 +566,7 @@ awaiting.</p>
 <span class="n">async_main_multi_line_loop</span>     <span class="n">took</span> <span class="mf">7.038</span> <span class="n">seconds</span>
 <span class="n">async_main_sep_tasks</span>           <span class="n">took</span> <span class="mf">0.690</span> <span class="n">seconds</span>
 </pre></div>
+</div>
 </div>
 </div>
 
