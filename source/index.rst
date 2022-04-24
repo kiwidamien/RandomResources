@@ -15,7 +15,9 @@ Welcome to RandomResources's documentation!
    content/trips/seattle_suggestions
    content/trips/alaska_2021
    content/trips/fairbanks_2021
-   content/trips/iceland
+   content/trips/iceland/iceland_tour
+   content/trips/vietnam/vietnam
+
 
 .. toctree::
    :maxdepth: 2
