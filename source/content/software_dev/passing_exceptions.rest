@@ -1,0 +1,11 @@
+Passing Exceptions 101
+**********************
+
+Speaker: Amandine Lee
+
+`Youtube link <https://www.youtube.com/watch?v=BMtJbrvwlmo>`_
+
+Summary
+-------
+
+
