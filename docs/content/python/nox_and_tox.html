@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nox and Tox for Python testing &#8212; RandomResources  documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Timing in Notebooks" href="timing_notebooks.html" />
+    <link rel="prev" title="Line # Hits Time Per Hit % Time Line Contents" href="line_profiling.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../index.html">
+<p class="title">RandomResources</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../trips/nz2020.html">
+  New Zealand (2020-2021)
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../trips/seattle_suggestions.html">
+  Seattle Suggestions
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../trips/alaska_2021.html">
+  Alaska (June 19-July 11, 2021)
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../trips/fairbanks_2021.html">
+  Fairbanks (March 4-March 14, 2021)
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../trips/iceland/iceland_tour.html">
+  Iceland Tour (Nov 18-28 2022)
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../trips/vietnam/vietnam.html">
+  Vietnam (Oli and En Route Phototours)
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../vim/tmux_shortcuts.html">
+  tmux shortcuts
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../vim/vim_and_window_management.html">
+  Using tmux and vim together
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../vim/vim_as_ide.html">
+  Vim as IDE
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../vim/vimrc.html">
+  Vimrc settings
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../photo/astro/focal_length.html">
+  Focal length and night photography
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="async_non_async_tasks.html">
+  How to async
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="await_resources.html">
+  Resources on asyncio
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="debugging_logging.html">
+  Debugging and refactoring trick
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="line_profiling.html">
+  Line #    Hits    Time    Per Hit    % Time    Line Contents
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  Nox and Tox for Python testing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="timing_notebooks.html">
+  Timing in Notebooks
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../prob_prog/resources.html">
+  Probabilitic Programming resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../card_problem.html">
+  Card Problem
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../resume.html">
+  Resume
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/beyond_unit_tests.html">
+  Beyond Unit Tests
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/class_development_toolkit.html">
+  Class Development Toolkit
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/clean_architecture.html">
+  The Clean Architecture in Python
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/code_refactoring_code_smells.html">
+  Code Refactoring: Learn Code Smells
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/code_review.html">
+  Constructive Code Review
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/ester_nam_empathy.html">
+  Empathy: One Weird Trick to Becoming a Better Software Developer
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/how_to_write_functions.html">
+  HOWTO Write a Function
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/stop_writing_classes.html">
+  Stop Writing Classes!
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/structure_and_interpretation_of_test_cases.html">
+  Structure and Interpretation of Test Cases
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../software_dev/tests_for_legacy_code.html">
+  “What is this mess?” aka Writing tests of pre-existing code bases
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="line_profiling.html"
+                        title="previous chapter">Line #    Hits    Time    Per Hit    % Time    Line Contents</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="timing_notebooks.html"
+                        title="next chapter">Timing in Notebooks</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-they">
+   What are they?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#difference-between-tox-and-nox">
+   Difference between tox and nox
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#my-normal-workflow">
+   My normal workflow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-file">
+   Example file
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="nox-and-tox-for-python-testing">
+<h1>Nox and Tox for Python testing<a class="headerlink" href="#nox-and-tox-for-python-testing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-are-they">
+<h2>What are they?<a class="headerlink" href="#what-are-they" title="Permalink to this headline">¶</a></h2>
+<p>Tox and Nox are two different tools for solving the same problem:</p>
+<ul class="simple">
+<li><p>running python tests (specifically <code class="code docutils literal notranslate"><span class="pre">pytest</span></code> tests) in specific python environment(s)</p></li>
+</ul>
+<p>They both do this by constructing a python environment specifically for tests. This should be similar to how
+remote work starts a brand new container. This ensures that you know <em>exactly</em> what environment your tests
+passed or failed in.</p>
+<p>Tox and Nox both allow you to specify multiple environments.</p>
+<p><strong>Pros:</strong></p>
+<ul class="simple">
+<li><p>Allows you to be very targeted about the environment that you are testing on</p>
+<ul>
+<li><p>You might worry about overfitting, but really when we run on our own machine we are testing a specific environment. The solution here means we can _reproduce_ the specific environment.</p></li>
+</ul>
+</li>
+<li><p>Able to run and check multiple environments.</p></li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul class="simple">
+<li><p>Runs significantly slower, because you are constructing a virtual environment.</p></li>
+</ul>
+<p>A good <a class="reference external" href="https://python.plainenglish.io/unit-testing-in-python-tox-and-nox-833e4bbce729">article</a> on the difference between
+tox and nox is here. This article will primarily use nox.</p>
+</div>
+<div class="section" id="difference-between-tox-and-nox">
+<h2>Difference between tox and nox<a class="headerlink" href="#difference-between-tox-and-nox" title="Permalink to this headline">¶</a></h2>
+<p>They both solve the same problem. You do not need to use both of them, and should only pick one.
+The difference between them is</p>
+<ol class="arabic simple">
+<li><p><strong>tox</strong>: Has a configuration file that drives it called <code class="code docutils literal notranslate"><span class="pre">tox.ini</span></code></p></li>
+<li><p><strong>nox</strong>: Has a python script that drives it called <code class="code docutils literal notranslate"><span class="pre">noxfile.py</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="my-normal-workflow">
+<h2>My normal workflow<a class="headerlink" href="#my-normal-workflow" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>When doing local development, run <code class="code docutils literal notranslate"><span class="pre">pytest</span></code> in my local dev environment.</p></li>
+<li><p>When about to push to my branch, or at major milestones, run <code class="code docutils literal notranslate"><span class="pre">nox</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="example-file">
+<h2>Example file<a class="headerlink" href="#example-file" title="Permalink to this headline">¶</a></h2>
+<p>Let’s see a noxfile in action!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">To run:</span>
+
+<span class="sd">$ nox -s lint      # Runs flake8 and black, in Python 3.9 only</span>
+
+<span class="sd">$ nox -s run_tests # Runs &quot;pytest --html=report.html&quot; for Python 3.7 and Python 3.9</span>
+
+<span class="sd">In each case, nox generates a new virtual environment. There are flags that allow you</span>
+<span class="sd">to reuse environments, but if you are willing to wait longer, recreating the env each</span>
+<span class="sd">time will be a better guarantee that things will be reproducable.</span>
+
+<span class="sd">When doing development, running &quot;pytest&quot; in your local environment can be a way of </span>
+<span class="sd">saving on the overhead of constructing a virtual env.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">nox</span>
+
+
+<span class="nd">@nox</span><span class="o">.</span><span class="n">session</span><span class="p">(</span><span class="n">python</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;3.7&quot;</span><span class="p">,</span> <span class="s2">&quot;3.9&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">run_tests</span><span class="p">(</span><span class="n">session</span><span class="p">):</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="s1">&#39;requirements.txt&#39;</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="s1">&#39;pytest&#39;</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;pytest&#39;</span><span class="p">,</span> <span class="s1">&#39;--html=report.html&#39;</span><span class="p">)</span>
+
+
+<span class="nd">@nox</span><span class="o">.</span><span class="n">session</span><span class="p">(</span><span class="n">python</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;3.9&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">lint</span><span class="p">(</span><span class="n">session</span><span class="p">):</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="s1">&#39;flake8&#39;</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;flake8&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="line_profiling.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Line #    Hits    Time    Per Hit    % Time    Line Contents</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="timing_notebooks.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Timing in Notebooks</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2020, Damien Martin.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
